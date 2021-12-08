@@ -2,17 +2,20 @@ import datetime
 import logging
 import os
 
+
 # The location of the log file.
 log = '/home/akim/dox/cs/epq/activity.log'
 
+
+def gen_timestamp():
+    timestamp = datetime.datetime.now().strftime('%d-%m-%Y %H:%m')
+    return timestamp
 
 def fmt_entry(inp, opt, opt_num):
     opt = opt.upper()
 
     # Unformatted date and time
-    unfmt_datetime = datetime.datetime.now()
-    global timestamp 
-    timestamp = unfmt_datetime.strftime('%d-%m-%Y %H:%m')
+    timestamp = gen_timestamp()
     if opt_num == None:
         # Formatted input
         fmt_inp = f'[{timestamp}] ( {opt} ) {inp}\n'
@@ -25,30 +28,41 @@ def fmt_entry(inp, opt, opt_num):
     return fmt_inp
 
 
-def del_entry(entry_n):
+def sel_entry(entry_n):
     # With...as is the same as file.open() and file.close(), but cleaner.
     with open(f'{log}', 'r') as log_r:
         entries = log_r.readlines()
         lines_n = len(entries)
 
-    # Delete the last entry.
     if entry_n == 'l':
-        fmt_entry = entries[-1].replace('\n', '')
-        print(f'Entry "{fmt_entry}" has been deleted.')
-        del entries[-1]
+        return lines_n - 1
 
     elif entry_n.isdigit() and int(entry_n) <= lines_n:
         entry_n = int(entry_n)
         if entry_n == 0:
-            print('Nothing has been deleted.')
-            return
-        fmt_entry = entries[entry_n - 1].replace('\n', '')
-        print(f'Entry "{fmt_entry}" has been deleted.')
-        del entries[entry_n - 1]
+            print('ERROR: Invalid entry number.')
+            return 
+        else:
+            return entry_n - 1
 
     else:
-        print('Nothing has been deleted.')
+        print('ERROR: Invalid entry number.')
         return
+
+
+def del_entry(entry_n):
+    # With...as is the same as file.open() and file.close(), but cleaner.
+    with open(f'{log}', 'r') as log_r:
+        entries = log_r.readlines()
+
+    del_entry_n = sel_entry(entry_n)
+
+    if del_entry_n == None:
+        return
+    else:
+        entry = entries[del_entry_n].replace('\n', '')
+        print(f'Entry "{entry}" has been deleted.')
+        del entries[del_entry_n]
 
     with open(f'{log}', 'w') as log_w:
         for entry in entries:
@@ -56,10 +70,8 @@ def del_entry(entry_n):
 
 
 def find_last(entries, lines_n, opt):
-    # Make the letter uppercase just in case.
     opt = opt.upper()
-    global timestamp
-    timestamp = datetime.datetime.now().strftime('%d-%m-%Y %H:%m')
+    timestamp = gen_timestamp()
     # Position of the option in an entry in the log file.
     # Next time use regex instead of whatever this is... 
     opt_pos = len(timestamp) + 4
@@ -70,26 +82,69 @@ def find_last(entries, lines_n, opt):
         if char[opt_pos] == opt:
             # The 2 digits after the option letter 
             # is the number of an issue/warning.
-            last = int(str(char[opt_pos + 1])
-                             + str(char[opt_pos + 2]))
-            logging.debug(last) 
+            last = int(char[opt_pos + 1 : opt_pos + 3])
             break
 
     return last
 
 
-def add_issue(opt, inp):
+def add_entry(opt, inp, name):
     with open(f'{log}', 'r') as log_r:
         entries = log_r.readlines()
         lines_n = len(entries)
 
-    # Automatically capitilize the first letter.
-    inp = inp.replace(inp[0], inp[0].upper(), 1) 
-    last = find_last(entries, lines_n, opt)
-    issue = fmt_entry(inp, opt, last + 1)
+    # Activities are not numbered, therefore 
+    # there is no need in finding the last one.
+    if opt == 'a':
+        entry = fmt_entry(inp, opt, None)
+    else:
+        # Automatically capitilize the first letter.
+        inp = inp.replace(inp[0], inp[0].upper(), 1) 
+        last = find_last(entries, lines_n, opt)
+        entry = fmt_entry(inp, opt, last + 1)
 
     with open(f'{log}', 'a') as log_a:
-         log_a.write(issue)
+         log_a.write(entry)
+
+    entry = entry.replace('\n', '')
+    print(f'{name} "{entry}" has been added.')
+
+
+def annotate(entry_n, opt):
+    with open(f'{log}', 'r') as log_r:
+        entries = log_r.readlines()
+
+    timestamp_len = len(gen_timestamp())
+    actual_entry_n = sel_entry(entry_n)
+    if actual_entry_n is None:
+        return
+    cur_entry = entries[actual_entry_n].replace('\n', '')
+    tag = cur_entry[timestamp_len + 4 : timestamp_len + 7]
+
+    # TODO fix which entries could be annotated.
+    if tag[0]!='W' and tag[0]!='I':
+        print('ERROR: unable to annotate this type of entry.')
+        return
+    if opt == 'd':
+        if tag[0]!='A':
+            print('ERROR: unable to annotate this type of entry.')
+            return
+        opt_name = 'desctiption'
+        report = f'Added a description to {tag}.'
+    else:
+        opt_name = 'fix'
+        report = f'Fixed {tag}.'
+    fmt_report = fmt_entry(report, 'a', None)
+
+    annot = input(f'Add a {opt_name} to "{cur_entry}": ')
+    fmt_annot = fmt_entry(annot, opt, None)
+
+    entries[actual_entry_n] = f'{cur_entry}\n  {fmt_annot}'
+    entries.append(fmt_report)
+
+    with open(f'{log}', 'w') as log_w:
+        for entry in entries:
+            log_w.write(entry)
 
 
 def sel_opt(inp):
@@ -109,22 +164,36 @@ def sel_opt(inp):
               'Available options:\n'
               'I - Issue\n'
               'W - Warning\n'
-              'R - Resolved\n'
               'F - Fixed\n'
-              'T - To-Do\n'
-              'D - Description to the last entry\n'
+              'D - Description to an entry\n'
               'X - Delete an entry\n'
               'P - Print the log file\n'
               'Q - Quit')
     
     # Add an issue.
     elif opt == 'i':
-        issue = input('Add an issue: ')
-        add_issue(opt, issue)
+        issue_inp = input('Add an issue: ')
+        add_entry(opt, issue_inp, 'Issue')
+
+    # Add a warning.
+    elif opt == 'w':
+        warning_inp = input('Add a warning: ')
+        add_entry(opt, warning_inp, 'Warning')
+
+    elif opt == 'f':
+        fix_n = input('Enter the line number of the entry you fixed '
+                      '(l for the last one): ')
+        annotate(fix_n, opt)
+
+    # Add a description to an entry.
+    elif opt == 'd':
+        desc_n = input('Enter the line number of the entry you want to '
+                       'add a description to (l for the last one): ')
+        annotate(desc_n, opt)
 
     # Delete an entry.
     elif opt == 'x':
-        entry_n = input('Enter the number of entry to be deleted '
+        entry_n = input('Enter the line number of an entry to be deleted '
                         '(l for the last one): ')
         del_entry(entry_n)
     
@@ -137,31 +206,27 @@ def sel_opt(inp):
     elif opt == 'q':
         return
     
-    # Default option (Activity)
+    # Default option (Activity).
     else:
         opt = 'a'
-        # Reformat the input for it to have the correct option.
-        fmt_inp = fmt_entry(inp, opt, None)
-        with open(f'{log}', 'a') as log_a:
-            log_a.write(fmt_inp)
-        # Print the log file.
-        os.system(f'bat {log}')
+        add_entry(opt, inp, 'Activity')
 
 
 def main():
-    inp = None 
-    while inp != 'q':
-        inp = input('\nEnter an activity or option (h for help): ')
-        sel_opt(inp)
-
     # Logging
     lvl = logging.DEBUG 
-    fmt = '[%(levelname)s] %(lineno)s: %(msg)s'
+    fmt = '%(lineno)s: [%(levelname)s] %(msg)s'
     logging.basicConfig(level = lvl, format = fmt)
     # logging.info('')
     # logging.debug('')
     # logging.warning('')
     # logging.error('')
+
+    inp = None 
+    while inp != 'q':
+        inp = input('\nEnter an activity or option (h for help): ')
+        sel_opt(inp)
+
     
 if __name__ == '__main__':
     main()
