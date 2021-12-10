@@ -11,19 +11,17 @@ def gen_timestamp():
     timestamp = datetime.datetime.now().strftime('%d-%m-%Y %H:%m')
     return timestamp
 
+
 def fmt_entry(inp, opt, opt_num):
     opt = opt.upper()
 
-    # Unformatted date and time
     timestamp = gen_timestamp()
     if opt_num == None:
-        # Formatted input
         fmt_inp = f'[{timestamp}] ( {opt} ) {inp}\n'
+    elif opt_num < 10:
+        fmt_inp = f'[{timestamp}] ({opt}0{opt_num}) {inp}\n'
     else:
-        if opt_num < 10:
-            fmt_inp = f'[{timestamp}] ({opt}0{opt_num}) {inp}\n'
-        else:
-            fmt_inp = f'[{timestamp}] ({opt}{opt_num}) {inp}\n'
+        fmt_inp = f'[{timestamp}] ({opt}{opt_num}) {inp}\n'
 
     return fmt_inp
 
@@ -36,22 +34,14 @@ def sel_entry(entry_n):
 
     if entry_n == 'l':
         return lines_n - 1
-
-    elif entry_n.isdigit() and int(entry_n) <= lines_n:
-        entry_n = int(entry_n)
-        if entry_n == 0:
-            print('ERROR: Invalid entry number.')
-            return 
-        else:
-            return entry_n - 1
-
+    elif entry_n.isdigit() and int(entry_n) <= lines_n and int(entry_n) > 0:
+        return int(entry_n) - 1
     else:
         print('ERROR: Invalid entry number.')
         return
 
 
 def del_entry(entry_n):
-    # With...as is the same as file.open() and file.close(), but cleaner.
     with open(f'{log}', 'r') as log_r:
         entries = log_r.readlines()
 
@@ -118,29 +108,30 @@ def annotate(entry_n, opt):
     actual_entry_n = sel_entry(entry_n)
     if actual_entry_n is None:
         return
+
     cur_entry = entries[actual_entry_n].replace('\n', '')
     tag = cur_entry[timestamp_len + 4 : timestamp_len + 7]
 
-    # TODO fix which entries could be annotated.
-    if tag[0]!='W' and tag[0]!='I':
-        print('ERROR: unable to annotate this type of entry.')
-        return
-    if opt == 'd':
-        if tag[0]!='A':
-            print('ERROR: unable to annotate this type of entry.')
-            return
+    if opt == 'd' and (tag[1]=='A' or tag[0]=='W' or tag[0]=='I'):
         opt_name = 'desctiption'
-        report = f'Added a description to {tag}.'
-    else:
+        report = f'Added a description to {tag}.' 
+        if tag[1] == 'A':
+            report = f'Added a description to A{actual_entry_n + 1}.'
+
+    elif tag[0]=='W' or tag[0]=='I':
         opt_name = 'fix'
         report = f'Fixed {tag}.'
-    fmt_report = fmt_entry(report, 'a', None)
 
+    else:
+        print('ERROR: unable to annotate this type of entry.')
+        return
+
+    fmt_report = fmt_entry(report, 'a', None)
     annot = input(f'Add a {opt_name} to "{cur_entry}": ')
     fmt_annot = fmt_entry(annot, opt, None)
-
     entries[actual_entry_n] = f'{cur_entry}\n  {fmt_annot}'
     entries.append(fmt_report)
+    print(report)
 
     with open(f'{log}', 'w') as log_w:
         for entry in entries:
@@ -156,7 +147,6 @@ def sel_opt(inp):
     else:
         # Automatically capitilize the first letter.
         inp = inp.replace(inp[0], inp[0].upper(), 1) 
-        # fmt_inp = fmt_entry(inp, opt)
     
     # Help menu 
     if opt == 'h':
@@ -180,6 +170,7 @@ def sel_opt(inp):
         warning_inp = input('Add a warning: ')
         add_entry(opt, warning_inp, 'Warning')
 
+    # Add a fix.
     elif opt == 'f':
         fix_n = input('Enter the line number of the entry you fixed '
                       '(l for the last one): ')
