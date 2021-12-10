@@ -8,7 +8,7 @@ log = '/home/akim/dox/cs/epq/activity.log'
 
 
 def gen_timestamp():
-    timestamp = datetime.datetime.now().strftime('%d-%m-%Y %H:%m')
+    timestamp = datetime.datetime.now().strftime('%d-%m-%Y %H:%M')
     return timestamp
 
 
