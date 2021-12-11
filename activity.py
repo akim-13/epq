@@ -14,8 +14,10 @@ def gen_timestamp():
 
 def fmt_entry(inp, opt, opt_num):
     opt = opt.upper()
-
+    # Automatically capitilize the first letter.
+    inp = inp.replace(inp[0], inp[0].upper(), 1) 
     timestamp = gen_timestamp()
+
     if opt_num == None:
         fmt_inp = f'[{timestamp}] ( {opt} ) {inp}\n'
     elif opt_num < 10:
@@ -74,6 +76,12 @@ def find_last(entries, lines_n, opt):
             # is the number of an issue/warning.
             last = int(char[opt_pos + 1 : opt_pos + 3])
             break
+
+    if last >= 99:
+        # Not the most practical solution, but it doesn't really hurt 
+        # the user, so might as well go for the aesthetics.
+        last = 0
+        print('\nOVERFLOW WARNING: the count has been reset!\n')
 
     return last
 
@@ -141,15 +149,8 @@ def annotate(entry_n, opt):
 def sel_opt(inp):
     opt = inp.lower()
 
-    # Show the help menu if no input has been provided.
-    if inp == '':
-        opt = 'h'
-    else:
-        # Automatically capitilize the first letter.
-        inp = inp.replace(inp[0], inp[0].upper(), 1) 
-    
     # Help menu 
-    if opt == 'h':
+    if opt=='h' or opt=='':
         print('\nA - Activity (Default)\n\n'
               'Available options:\n'
               'I - Issue\n'
