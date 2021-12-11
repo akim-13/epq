@@ -122,20 +122,20 @@ def annotate(entry_n, opt):
 
     if opt == 'd' and (tag[1]=='A' or tag[0]=='W' or tag[0]=='I'):
         opt_name = 'desctiption'
-        report = f'Added a description to {tag}.' 
+        report = f'Added a description to {tag}' 
         if tag[1] == 'A':
-            report = f'Added a description to A{actual_entry_n + 1}.'
+            report = f'Added a description to A{actual_entry_n + 1}'
 
     elif tag[0]=='W' or tag[0]=='I':
         opt_name = 'fix'
-        report = f'Fixed {tag}.'
+        report = f'Fixed {tag}'
 
     else:
         print('ERROR: unable to annotate this type of entry.')
         return
 
-    fmt_report = fmt_entry(report, 'a', None)
     annot = input(f'Add a {opt_name} to "{cur_entry}": ')
+    fmt_report = fmt_entry(report, 'a', None)
     fmt_annot = fmt_entry(annot, opt, None)
     entries[actual_entry_n] = f'{cur_entry}\n  {fmt_annot}'
     entries.append(fmt_report)
