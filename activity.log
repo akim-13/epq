@@ -1,32 +1,52 @@
-[05-12-2021 20:12:14 PM] (A) 1
-[05-12-2021 20:12:14 PM] (A) 2
-[05-12-2021 20:12:15 PM] (A) 4
-[05-12-2021 20:12:15 PM] (A) 5
-[06-12-2021 12:12:06 PM] (A) 6
-[06-12-2021 12:12:08 PM] (A) 7
-[06-12-2021 12:12:42 PM] (A) A
-[06-12-2021 13:12:18 PM] (A) Hello
-[06-12-2021 13:12:37 PM] (A) 689
-[06-12-2021 13:12:06 PM] (A) What's up
-[06-12-2021 13:12:56 PM] (5) 5
-[06-12-2021 13:12:06 PM] (AH?) Ah?
-[06-12-2021 13:12:46] (A) Hello
-[06/12/2021 13:12:19] (A) Hi
-[06-12-2021 13:12] (A) He
-[06-12-2021 13:12] (A) Hooo
-[06-12-2021 13:12] (A) Testing
-[06-12-2021 13:12] (A) %
-[06-12-2021 14:12] (A) Test
-[06-12-2021 16:12] ( A ) Hello
-[06-12-2021 16:12] ( A ) D
-[06-12-2021 16:12] (I01) First one
-[06-12-2021 16:12] (I02) Yes
-[06-12-2021 16:12] (I03) F
-[06-12-2021 16:12] (I04) I
-[06-12-2021 16:12] (I05) I
-[06-12-2021 16:12] (I06) I
-[06-12-2021 16:12] (I07) I
-[06-12-2021 16:12] (I08) I
-[06-12-2021 16:12] (I09) I
-[06-12-2021 16:12] (I10) I
-[06-12-2021 16:12] (I11) I
+[10-12-2021 19:12] ( A ) Downloaded the Arch Linux ISO file
+[10-12-2021 19:25] ( A ) Verfied the image signature using gpg
+[10-12-2021 19:33] ( A ) `dd`-ed the image to a usb drive
+[10-12-2021 19:51] (I01) Cannot boot into the live environment
+  [11-12-2021 18:08] ( F ) Reformatted the usb and reinstalled the iso
+[11-12-2021 18:08] ( A ) Fixed I01
+  [11-12-2021 18:08] ( D ) The iso might have been corrupted
+[11-12-2021 18:08] ( A ) Added a description to A6
+[11-12-2021 18:13] ( A ) Connected to wifi using iwctl
+[11-12-2021 18:21] ( A ) Created a LUKS encrypted container
+[11-12-2021 18:50] ( A ) Made and formatted the logical volumes (LVM)
+[11-12-2021 19:04] ( A ) Mounted the file systems
+[12-12-2021 17:09] ( A ) Updated the mirrors using reflector
+[12-12-2021 17:25] ( A ) Installed essential packages with pacstrap
+[12-12-2021 17:28] ( A ) Generated an fstab file
+[12-12-2021 17:30] ( A ) Changed the time zone and generated locales
+[12-12-2021 17:31] ( A ) Configured the network
+[12-12-2021 20:14] ( A ) Configured the mkinitcpio
+[12-12-2021 21:09] ( A ) Configured the boot loader
+[12-12-2021 21:15] ( A ) Enabled microcode for the AMD CPU
+[12-12-2021 21:16] ( A ) Set a root password
+  [12-12-2021 21:16] ( D ) Core configuration is complete
+[12-12-2021 21:16] ( A ) Added a description to A21
+[13-12-2021 17:20] ( A ) Created an unpriviliged user and added him to the necessary groups
+[13-12-2021 17:42] ( A ) Installed and configured Xorg
+[13-12-2021 19:11] ( A ) Installed and configured picom by yshui
+[13-12-2021 19:25] ( A ) Installed drivers
+[13-12-2021 19:27] (W01) Try other compositing managers in order to enhance the performance (ref. A26)
+[13-12-2021 19:59] ( A ) Installed DWM flexipatch
+  [13-12-2021 20:00] ( D ) Vanilla DWM but with togglable patches
+[13-12-2021 20:00] ( A ) Added a description to A29
+[13-12-2021 20:09] ( A ) Installed startx
+[13-12-2021 22:29] ( A ) Added a few patches to DWM and basic configuration
+[14-12-2021 18:14] ( A ) Installed ZSH
+  [14-12-2021 18:15] ( D ) A better alternative to bash
+[14-12-2021 18:15] ( A ) Added a description to A34
+[14-12-2021 19:58] ( A ) Configured ZSH autocompletion and added aliases + other basic settings
+[14-12-2021 20:04] ( A ) Installed qutebrowser
+  [14-12-2021 20:04] ( D ) A keyboard driven browser
+[14-12-2021 20:04] ( A ) Added a description to A38
+[14-12-2021 20:31] ( A ) Configured sound (PulseAudio)
+[14-12-2021 20:55] ( A ) Installed fonts
+[14-12-2021 21:01] ( A ) Installed paru
+  [14-12-2021 21:03] ( D ) AUR helper
+[14-12-2021 21:03] ( A ) Added a description to A43
+[14-12-2021 21:41] (I02) Overheating due to incorrect fan control
+  [14-12-2021 21:41] ( D ) Standard methods of controlling the fans don't work
+[14-12-2021 21:41] ( A ) Added a description to I02
+[15-12-2021 12:08] ( A ) Cleaned up the $HOME by making most of the programs follow the XDG base directory specification
+[15-12-2021 12:09] (I03) Downloads and .pki directories don't follow the XDG
+  [15-12-2021 12:10] ( D ) Created a post on the Arch forum, waiting for a reply
+[15-12-2021 12:10] ( A ) Added a description to I03
