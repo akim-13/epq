@@ -1,3 +1,21 @@
+    _        _   _       _ _            _                                    
+   / \   ___| |_(_)_   _(_) |_ _   _   | | ___   __ _  __ _  ___ _ __       
+  / _ \ / __| __| \ \ / / | __| | | |  | |/ _ \ / _` |/ _` |/ _ \ __|   
+ / ___ \ (__| |_| |\ V /| | |_| |_| |  | | (_) | (_| | (_| |  __/ |        
+/_/   \_\___|\__|_| \_/ |_|\__|\__, |  |_|\___/ \__, |\__, |\___|_|
+                               |___/            |___/ |___/                  
+Creator: Akim                                                                
+Source code: https://github.com/Jac0g/epq
+                                  
+Tags:                                                                        
+( A ) - Activity                                                             
+( D ) - Description                                                          
+( F ) - Fixed                                                                
+(I__) - Issue                                                                
+(W__) - Warning
+                                                            
+=====================================================================
+      
 [10-12-2021 19:12] ( A ) Downloaded the Arch Linux ISO file
 [10-12-2021 19:25] ( A ) Verfied the image signature using gpg
 [10-12-2021 19:33] ( A ) `dd`-ed the image to a usb drive
@@ -5,7 +23,7 @@
   [11-12-2021 18:08] ( F ) Reformatted the usb and reinstalled the iso
 [11-12-2021 18:08] ( A ) Fixed I01
   [11-12-2021 18:08] ( D ) The iso might have been corrupted
-[11-12-2021 18:08] ( A ) Added a description to A6
+[11-12-2021 18:08] ( A ) Added a description to A24
 [11-12-2021 18:13] ( A ) Connected to wifi using iwctl
 [11-12-2021 18:21] ( A ) Created a LUKS encrypted container
 [11-12-2021 18:50] ( A ) Made and formatted the logical volumes (LVM)
@@ -20,33 +38,40 @@
 [12-12-2021 21:15] ( A ) Enabled microcode for the AMD CPU
 [12-12-2021 21:16] ( A ) Set a root password
   [12-12-2021 21:16] ( D ) Core configuration is complete
-[12-12-2021 21:16] ( A ) Added a description to A21
+[12-12-2021 21:16] ( A ) Added a description to A39
 [13-12-2021 17:20] ( A ) Created an unpriviliged user and added him to the necessary groups
 [13-12-2021 17:42] ( A ) Installed and configured Xorg
 [13-12-2021 19:11] ( A ) Installed and configured picom by yshui
 [13-12-2021 19:25] ( A ) Installed drivers
-[13-12-2021 19:27] (W01) Try other compositing managers in order to enhance the performance (ref. A26)
+[13-12-2021 19:27] (W01) Try other compositing managers in order to enhance the performance (ref. A44)
 [13-12-2021 19:59] ( A ) Installed DWM flexipatch
   [13-12-2021 20:00] ( D ) Vanilla DWM but with togglable patches
-[13-12-2021 20:00] ( A ) Added a description to A29
+[13-12-2021 20:00] ( A ) Added a description to A47
 [13-12-2021 20:09] ( A ) Installed startx
 [13-12-2021 22:29] ( A ) Added a few patches to DWM and basic configuration
 [14-12-2021 18:14] ( A ) Installed ZSH
   [14-12-2021 18:15] ( D ) A better alternative to bash
-[14-12-2021 18:15] ( A ) Added a description to A34
+[14-12-2021 18:15] ( A ) Added a description to A52
 [14-12-2021 19:58] ( A ) Configured ZSH autocompletion and added aliases + other basic settings
 [14-12-2021 20:04] ( A ) Installed qutebrowser
   [14-12-2021 20:04] ( D ) A keyboard driven browser
-[14-12-2021 20:04] ( A ) Added a description to A38
+[14-12-2021 20:04] ( A ) Added a description to A56
 [14-12-2021 20:31] ( A ) Configured sound (PulseAudio)
 [14-12-2021 20:55] ( A ) Installed fonts
 [14-12-2021 21:01] ( A ) Installed paru
   [14-12-2021 21:03] ( D ) AUR helper
-[14-12-2021 21:03] ( A ) Added a description to A43
+[14-12-2021 21:03] ( A ) Added a description to A61
 [14-12-2021 21:41] (I02) Overheating due to incorrect fan control
+  [15-12-2021 17:20] ( F ) Installed dell-bios-fan-control to disable bios overriding fan control
   [14-12-2021 21:41] ( D ) Standard methods of controlling the fans don't work
 [14-12-2021 21:41] ( A ) Added a description to I02
-[15-12-2021 12:08] ( A ) Cleaned up the $HOME by making most of the programs follow the XDG base directory specification
-[15-12-2021 12:09] (I03) Downloads and .pki directories don't follow the XDG
-  [15-12-2021 12:10] ( D ) Created a post on the Arch forum, waiting for a reply
-[15-12-2021 12:10] ( A ) Added a description to I03
+[15-12-2021 10:08] ( A ) Cleaned up the $HOME by making most of the programs follow the XDG base directory specification
+[15-12-2021 10:09] (I03) Downloads and .pki directories don't follow the XDG
+  [15-12-2021 10:10] ( D ) Created a post on the Arch forum, waiting for a reply
+[15-12-2021 10:10] ( A ) Added a description to I03
+[15-12-2021 11:45] ( A ) Automated setting a timezone with a Network Manager dispatcher script
+  [15-12-2021 11:46] ( D ) AW: https://wiki.archlinux.org/title/System_time#Update_timezone_every_time_NetworkManager_connects_to_a_network
+[15-12-2021 11:46] ( A ) Added a description to A71
+[15-12-2021 11:49] ( A ) Automated syncing time with systemd-timesyncd
+[15-12-2021 11:51] (W02) A71 and A74 are untested, so there there is no guarantee that everything works
+[15-12-2021 17:20] ( A ) Fixed I02

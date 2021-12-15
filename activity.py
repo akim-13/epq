@@ -36,7 +36,8 @@ def sel_entry(entry_n):
 
     if entry_n == 'l':
         return lines_n - 1
-    elif entry_n.isdigit() and int(entry_n) <= lines_n and int(entry_n) > 0:
+    elif (entry_n.isdigit() and int(entry_n) <= lines_n
+                            and int(entry_n) > header_size):
         return int(entry_n) - 1
     else:
         print('ERROR: Invalid entry number.')
@@ -204,6 +205,33 @@ def sel_opt(inp):
         add_entry(opt, inp, 'Activity')
 
 
+def prepend_header():
+    header = ('    _        _   _       _ _            _                                    \n'
+              '   / \\   ___| |_(_)_   _(_) |_ _   _   | | ___   __ _  __ _  ___ _ __       \n'
+              '  / _ \\ / __| __| \\ \\ / / | __| | | |  | |/ _ \\ / _` |/ _` |/ _ \\ __|   \n'
+              ' / ___ \\ (__| |_| |\\ V /| | |_| |_| |  | | (_) | (_| | (_| |  __/ |        \n'
+              '/_/   \\_\\___|\\__|_| \\_/ |_|\\__|\\__, |  |_|\\___/ \\__, |\\__, |\\___|_|\n'
+              '                               |___/            |___/ |___/                  \n'
+              'Creator: Akim                                                                \n'
+              'Source code: https://github.com/Jac0g/epq\n                                  \n'
+              'Tags:                                                                        \n'
+              '( A ) - Activity                                                             \n'
+              '( D ) - Description                                                          \n'
+              '( F ) - Fixed                                                                \n'
+              '(I__) - Issue                                                                \n'
+              '(W__) - Warning\n                                                            \n'
+              '=====================================================================\n      \n')
+    global header_size
+    header_size = header.count('\n')
+
+    with open(f'{log}', 'r+') as log_r:
+        contents = log_r.read()
+        # If there is no header, prepend one.
+        if contents[0 : len(header)] != header[0 : len(header)]:
+            log_r.seek(0)
+            log_r.write(header + contents)
+
+
 def main():
     # Logging
     lvl = logging.DEBUG 
@@ -214,6 +242,7 @@ def main():
     # logging.warning('')
     # logging.error('')
 
+    prepend_header()
     inp = None 
     while inp != 'q':
         inp = input('\nEnter an activity or option (h for help): ')
