@@ -75,3 +75,10 @@ Tags:
 [15-12-2021 11:49] ( A ) Automated syncing time with systemd-timesyncd
 [15-12-2021 11:51] (W02) A71 and A74 are untested, so there there is no guarantee that everything works
 [15-12-2021 17:20] ( A ) Fixed I02
+[19-12-2021 21:49] ( A ) Tweaked xrandr to properly connect a second vertical monitor
+[30-12-2021 14:59] ( A ) Started creating a neovim config in lua
+[31-12-2021 00:20] ( A ) Set options in neovim
+[31-12-2021 00:40] ( A ) Optimized the syntax of setting options in nvim
+[31-12-2021 01:23] ( A ) Started setting up keymaps nvim
+[06-01-2022 19:38] ( A ) Set up keymaps nvim
+[06-01-2022 19:39] ( A ) Implemented completion and snippets with cmp.nvim and luasnip.nvimm
