@@ -82,3 +82,13 @@ Tags:
 [31-12-2021 01:23] ( A ) Started setting up keymaps nvim
 [06-01-2022 19:38] ( A ) Set up keymaps nvim
 [06-01-2022 19:39] ( A ) Implemented completion and snippets with cmp.nvim and luasnip.nvimm
+[09-01-2022 16:10] ( A ) Set up LSP for nvim
+[09-01-2022 17:09] ( A ) Set up Telescope for nvim (fuzzy finder)
+[09-01-2022 17:36] ( A ) Set up advanced syntax highlighting for nvim with Treesitter
+[09-01-2022 17:50] ( A ) Set up autopairs for nvim
+[09-01-2022 18:21] ( A ) Set up file tree for nvim with nvim-tree
+[21-01-2022 01:29] ( A ) Wrote shell scripts to display date and battery indicator
+[20-01-2022 23:42] ( A ) Shell script displaying wifi
+[21-01-2022 21:26] ( A ) Volume indicator
+[22-01-2022 22:49] ( A ) Internet speed in the status bar
+[23-01-2022 17:30] ( A ) Added GPU and CPU temperature indicators to the status bar
