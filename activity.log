@@ -92,3 +92,10 @@ Tags:
 [21-01-2022 21:26] ( A ) Volume indicator
 [22-01-2022 22:49] ( A ) Internet speed in the status bar
 [23-01-2022 17:30] ( A ) Added GPU and CPU temperature indicators to the status bar
+[29-01-2022 10:16] (I04) No internet connection
+  [29-01-2022 10:23] ( D ) Https://wiki.archlinux.org/title/Systemd-resolved and https://wiki.archlinux.org/title/NetworkManager#DNS_management
+  [29-01-2022 10:18] ( F ) Symlinked /etc/resolv.conf and copied fallback DNS servers to current DNS servers at /etc/systemd/resolved.conf.d
+[29-01-2022 10:18] ( A ) Fixed I04
+[29-01-2022 10:23] ( A ) Added a description to I04
+[29-01-2022 11:25] ( A ) Configured colour scheme for Qutebrowser
+[01-02-2022 13:07] ( A ) Set up basic color scheme for WM
