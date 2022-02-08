@@ -27,7 +27,6 @@ def fmt_entry(inp, opt, opt_num):
 
     return fmt_inp
 
-
 def sel_entry(entry_n):
     # With...as is the same as file.open() and file.close(), but cleaner.
     with open(f'{log}', 'r') as log_r:
@@ -92,6 +91,10 @@ def add_entry(opt, inp, name):
         entries = log_r.readlines()
         lines_n = len(entries)
 
+    if not inp:
+        print('ERROR: no input has been provided.')
+        return
+
     # Activities are not numbered, therefore 
     # there is no need in finding the last one.
     if opt == 'a':
@@ -136,6 +139,10 @@ def annotate(entry_n, opt):
         return
 
     annot = input(f'Add a {opt_name} to "{cur_entry}": ')
+    if not annot:
+        print(f'ERROR: no {opt_name} has been provided.')
+        return
+
     fmt_report = fmt_entry(report, 'a', None)
     fmt_annot = fmt_entry(annot, opt, None)
     entries[actual_entry_n] = f'{cur_entry}\n  {fmt_annot}'
