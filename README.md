@@ -88,14 +88,16 @@ sharing code, which incorporates a Version Control System
 [git](https://git-scm.com/). 
 
 This system provides an extremely detailed breakdown of every little change in
-the system, right down to a side-to-side comparison of every line of code
-(*fig. 1*). Yet understandability remains unharmed, as all the changes can be
-presented with a short description on a simple timeline (*fig 2*).
+the system, right down to a side-to-side comparison of every altered line of
+code (*fig. 1*). Yet understandability remains unharmed, as all the changes can
+be presented with a short description on a simple timeline (*fig 2*), thus
+each aspect of this solution has been proven to be superior to the previous
+one.
 
 ![Git comparison](./attachments/1.png) 
-<p align="center"> *Figure 1* </p>
+*<p align="center"> Figure 1 </p>*
 
 ![Git timeline](./attachments/2.png)
-<p align="center"> *Figure 2* </p>
+*<p align="center"> Figure 2 </p>*
 
 ## Introduction
