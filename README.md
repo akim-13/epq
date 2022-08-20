@@ -83,14 +83,14 @@ more importantly an unnecessary, extra load.
 
 A better solution turned out to be the use of an already existing and utilised
 system — GitHub. At its core, GitHub is a website and cloud-based service for
-sharing code, which incorporates a Version Control System
-([VCS](https://en.wikipedia.org/wiki/Version_control)) called
+sharing code, which incorporates a [Version Control
+System](https://en.wikipedia.org/wiki/Version_control) (VCS) called
 [git](https://git-scm.com/). 
 
 This system provides an extremely detailed breakdown of every little change in
 the system, right down to a side-to-side comparison of every altered line of
-code (*fig. 1*). Yet understandability remains unharmed, as all the changes can
-be presented with a short description on a simple timeline (*fig 2*), thus
+code *(fig. 1)*. Yet understandability remains unharmed, as all the changes can
+be presented with a short description on a simple timeline *(fig. 2)*, thus
 each aspect of this solution has been proven to be superior to the previous
 one.
 
@@ -100,4 +100,23 @@ one.
 ![Git timeline](./attachments/2.png)
 *<p align="center"> Figure 2 </p>*
 
-## Introduction
+# Why Linux?
+There are three major Operating Systems (OSs) *(fig 3)*:
+1. Windows
+2. Mac OS
+3. Linux
+
+The most popular one OS by far is Windows, accounting for roughly 70% of global
+market share. It is aimed to be compatible with as many devices as possible,
+hence it is a go-to choice of all major PC/laptop manufacturers.
+
+On the second place is Mac OS at around 15% market share.
+
+
+
+![OSs bar chart](./attachments/oss.png) 
+*<p align="center"> Figure 3 </p>*
+
+
+
+# Which Linux?
