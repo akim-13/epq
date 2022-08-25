@@ -1,11 +1,16 @@
 # Linux: an OS You Control
 
 ## Table of Contents
-- [Abstract](#abstract)
-- [Remarks](#remarks)
-  * [Format](#format)
-  * [Activity Logging](#activity-logging)
-- [Introduction](#introduction)
+* [Abstract](#abstract)
+* [Remarks](#remarks)
+  + [Format](#format)
+  + [Activity Logging](#activity-logging)
+* [Why Linux?](#why-linux%3F)
+  + [Operating Systems](#operating-systems)
+  + [Windows](#windows)
+  + [Mac OS](#mac-os)
+  + [Linux](#linux)
+* [Which Linux?](#which-linux%3F)
 
 ## Abstract
 
@@ -14,8 +19,10 @@
 The following project will be made entirely in a Markdown format. From the
 official website:
 
-> Markdown is a lightweight markup language that you can use to add formatting
-elements to plaintext text documents.
+> **Markdown** is a lightweight markup language that you can use to add formatting
+> elements to plaintext text documents.[^md]
+
+[^md]: https://www.markdownguide.org/getting-started/
 
 Markdown is mostly used for simple tasks where minimal formatting is needed,
 e.g. emails, technical documentations or notes. Consequently, it might be
@@ -94,14 +101,26 @@ be presented with a short description on a simple timeline *(fig. 2)*, thus
 each aspect of this solution has been proven to be superior to the previous
 one.
 
-![Git comparison](./attachments/1.png) 
+![Git comparison](./attachments/git-diff.png) 
 *<p align="center"> Figure 1 </p>*
 
-![Git timeline](./attachments/2.png)
+![Git timeline](./attachments/git-timeline.png)
 *<p align="center"> Figure 2 </p>*
 
-# Why Linux?
-There are three major Operating Systems (OSs) *(fig 3)*:
+## Why Linux?
+### Operating Systems
+> An **Operating System (OS)** is an interface between a computer user and
+> computer hardware *(fig. 3)*. It is a software which performs all the basic tasks like
+> file management, memory management, process management, handling input and
+> output, and controlling peripheral devices such as disk drives and
+> printers.[^os-def]
+
+[^os-def]: https://www.tutorialspoint.com/operating_system/os_overview.htm
+
+![OS definition](./attachments/os_def.png) 
+*<p align="center"> Figure 3 </p>*
+
+There are three major OSs in the current market *(fig. 4)*:
 1. Windows
 2. Mac OS
 3. Linux
@@ -110,13 +129,73 @@ The most popular one OS by far is Windows, accounting for roughly 70% of global
 market share. It is aimed to be compatible with as many devices as possible,
 hence it is a go-to choice of all major PC/laptop manufacturers.
 
-On the second place is Mac OS at around 15% market share.
+In second place is Mac OS at around 15% market share. Although it is only
+available for laptops produced by Apple, with [over 20 million units sold
+annually](https://www.macrumors.com/2021/01/19/mac-sales-skyrocketing-after-m1-launch/),
+big market share is not a surprise.
 
+However, Linux, being free and compatible with almost all of the devices
+running Windows or Mac OS, comprises only 2-3% of the current market. To
+understand why that is, a deeper understanding of each OS is needed.
 
 
 ![OSs bar chart](./attachments/oss.png) 
-*<p align="center"> Figure 3 </p>*
+*<p align="center"> Figure 4 </p>*
+
+### Windows
+The first version of Windows, released in 1985, was simply a GUI offered as an
+extension of Microsoft’s existing disk operating system, or MS-DOS. Based in
+part on licensed concepts that Apple Inc. had used for its Macintosh System
+Software, Windows for the first time allowed DOS users to visually navigate a
+virtual desktop, opening graphical “windows” displaying the contents of
+electronic folders and files with the click of a mouse button, rather than
+typing commands and directory paths at a text prompt.[^win-history]
+
+[^win-history]: https://www.britannica.com/technology/Palm-OS
+
+In subsequent years the functionality of the OS gradually expanded, whilst most
+of the complexity behind it remained unseen by an average user. This approach
+appealed to many people around the World, and soon Windows became the most
+widely used desktop OS in the market. 
+
+Nonetheless, the convenience of being pre-installed on most of the devices,
+pre-configured and relatively straightforward
+[GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) and just the fact
+of being an
+[off-the-shelf](https://en.wikipedia.org/wiki/Commercial_off-the-shelf)
+software, comes at a price. Both figuratively and literally.
+
+At the time of writing, the price of the full and latest Windows version for an
+individual is
+[$199.99](https://www.microsoft.com/en-us/d/windows-10-pro/df77x4d43rkt/48dn?rtc=1&activetab=pivot:overviewtab).
+Although it is possible to use a newly bought Windows laptop without
+explicitly paying such a high price, the functionality of the OS will be
+severely constrained (e.g. unable to set a custom wallpaper). Consequently, the
+cost of the OS is usually paid indirectly, because it is included in the price
+of a device, or directly through Microsoft store in order to activate the
+product.
+
+Furthermore, to appeal to [almost 1.5 billion
+people](https://news.microsoft.com/bythenumbers/en/windowsdevices), a multitude
+of immutable decisions must be made for them by the system developers, which
+might not be in the best interest of the people themselves. For instance, the
+general look of the GUI, the core services used or even the
+[kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)). Allowing to
+alter something that has been permanently set by the developers would most
+likely harm the compatibility, stability and security of the system, and
+increase the configuration complexity for an end-user. None of the above seem
+to be beneficial for such a huge business, therefore the amount of available
+customisation is substantially limited.
+
+However, a far dangerous, albeit less noticeable in the short term, price is
+one's privacy.
+
+...
+
+### Mac OS
 
 
+### Linux
 
-# Which Linux?
+
+## Which Linux?
