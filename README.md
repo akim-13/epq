@@ -5,12 +5,12 @@
 * [Remarks](#remarks)
   + [Format](#format)
   + [Activity Logging](#activity-logging)
-* [Why Linux?](#why-linux%3F)
+* [Why Linux?](#why-linux)
   + [Operating Systems](#operating-systems)
   + [Windows](#windows)
   + [Mac OS](#mac-os)
   + [Linux](#linux)
-* [Which Linux?](#which-linux%3F)
+* [Which Linux?](#which-linux)
 
 ## Abstract
 
@@ -188,9 +188,27 @@ to be beneficial for such a huge business, therefore the amount of available
 customisation is substantially limited.
 
 However, a far dangerous, albeit less noticeable in the short term, price is
-one's privacy.
+one's privacy. Microsoft is known to collect hundreds upon hundreds of [data
+entries](https://igotoffer.com/microsoft/what-data-does-microsoft-collect),
+such as installed applications, hardware/device information, browsing, search
+and query data, details about the voice and typing input features. If you ever
+wondered how the internet ads match exactly the topic of conversation that you
+recently had with your friend, relative or college, this is one of the reasons.
+The main motivation behind collecting such sensitive personal information is
+to:
 
-...
+> - Personalise our products and make recommendations.
+> - Advertise and market to you, which includes sending promotional
+>   communications, targeting advertising, and presenting you with relevant
+>   offers.[^ads]
+
+[^ads]: https://privacy.microsoft.com/en-gb/privacystatement
+
+This also serves as a big source of system diagnostics, which is used for
+development and improvement. Nonetheless, if the consumers were actually aware
+that in order to use the OS every little action they take would have to be
+under constant surveillance, such shady business model would have been very
+unlikely to succeed on the global market.
 
 ### Mac OS
 
