@@ -151,7 +151,7 @@ virtual desktop, opening graphical “windows” displaying the contents of
 electronic folders and files with the click of a mouse button, rather than
 typing commands and directory paths at a text prompt.[^win-history]
 
-[^win-history]: https://www.britannica.com/technology/Palm-OS
+[^win-history]: https://www.britannica.com/technology/Windows-OS
 
 In subsequent years the functionality of the OS gradually expanded, whilst most
 of the complexity behind it remained unseen by an average user. This approach
@@ -211,6 +211,31 @@ under constant surveillance, such shady business model would have been very
 unlikely to succeed on the global market.
 
 ### Mac OS
+
+Mac OS was developed by the American computer company Apple Inc. The OS was
+introduced in 1984 to run the company’s Macintosh line of personal computers.
+The Macintosh heralded the era of graphical user interface (GUI)
+systems, and it inspired Microsoft Corporation to develop its own GUI, the
+Windows OS.
+
+In 1996 Apple acquired rival NeXT Computers, which was founded by Steve Jobs
+after his departure from Apple, and in 2001 the company rolled out Mac OS X, a
+major redesign based on both the NextStep system and Apple’s most recent OS
+release. OS X ran on a UNIX kernel (core software code) and offered technical
+advances such as memory protection and preemptive multitasking, along with a
+more versatile Finder, an elegant-looking interface called Aqua, and a
+convenient graphical “Dock” bar for launching frequently used
+applications.[^mac-history]
+
+[^mac-history]: https://www.britannica.com/technology/Mac-OS
+
+Although Mac OS may be considered open source (the kernel, [BSD
+subsystems](https://infomory.com/what-is/what-is-bsd-subsystem/), [browser
+rendering engine WebKit](https://webkit.org/), etc.) it has a proprietary
+application programming interface ([API](https://en.wikipedia.org/wiki/API)),
+which is much larger than in both Linux and Windows. Consequently, it raises
+the same privacy concern as discussed in the [Windows section](#windows), i.e.
+collecting personal data.
 
 
 ### Linux
