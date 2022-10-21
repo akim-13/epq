@@ -237,8 +237,96 @@ which is much larger than in both Linux and Windows. Consequently, it raises
 the same privacy concern as discussed in the [Windows section](#windows), i.e.
 collecting personal data.
 
+Although the software side customization is more promising on Mac OS, there is
+a major disadvantage to using this operating system due to the hardware
+limitations. Officially Mac OS is only available for Apple devices (MacBooks,
+iMacs and such), therefore in order to use it, one must be willing to use one
+of the hardware configurations provided by the company. The minimum price that
+has to be paid for the OS is equivalent to the price of the [cheapest official
+MacBook](https://www.apple.com/macbook-air-m1/) — $999.
+
 
 ### Linux
 
+In 1969, a team of developers of Bell Labs started a project to make a common
+software for all the computers and named it as "Unix". It was simple and
+elegant, used "C" language instead of assembly language and its code was
+recyclable. As it was recyclable, a part of its code now commonly called
+"kernel" was used to develop the operating system and other functions and could
+be used on different systems. Also its source code was open source. 
+
+In 1983, Richard Stallman developed GNU project with the goal to make it freely
+available Unix like operating system and to be used by everyone. But his
+project failed in gaining popularity. In 1991, Linus Torvalds a student at the
+university of Helsinki, Finland, thought to have a freely available academic
+version of Unix started writing its own code. Later this project became the
+Linux kernel. He started it just for fun but ended up with such a large
+project. He published the Linux kernel under his own license and was restricted
+to use it commercially. Linux uses most of its tools from GNU software and are
+under GNU copyright. In 1992, he released the kernel under GNU General Public
+License.[^linux-history]
+
+[^linux-history]: https://www.javatpoint.com/linux-history
+
+Because Linux was developed as FOSS ([Free and Open Source
+Software](https://en.wikipedia.org/wiki/Free_and_open-source_software)) it
+abides by the four essential freedoms of free software, defined by Richard M.
+Stallman in his book "Free Software, Free Society" and later adopted by the FSF
+([Free Software Foundation](https://www.fsf.org/)):
+
+> - The freedom to run the program as you wish, for any purpose (**freedom 0**).
+> - The freedom to study how the program works, and change it so it does your
+>    computing as you wish (**freedom 1**). Access to the source code is a
+>    precondition for this.
+> - The freedom to redistribute copies so you can help others (**freedom 2**).
+> - The freedom to distribute copies of your modified versions to others
+>    (**freedom 3**). By doing this you can give the whole community a chance to
+>    benefit from your changes. Access to the source code is a precondition for
+>    this.[^four-freedoms]
+
+[^four-freedoms]: https://www.gnu.org/philosophy/free-sw.en.html#four-freedoms
+
+These four simple principals allow Linux to resolve major issues present in
+Windows and Mac OS. Firstly, there are no privacy, surveillance or data selling
+concerns with Linux, due to the first freedom. Every changed setting, ran
+command or any other undertaken action can be freely traced and analyzed to
+ensure that it does what it is supposed to do, instead of sending user data to
+a big corporation for instance.
+
+Secondly, Linux is free and widely available. The Kernel itself is 100% free
+and open source, as are most of the
+[distributions](https://en.wikipedia.org/wiki/Linux_distribution). Some of them
+are paid (e.g.
+[RHEL](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux)),
+however with [over 600 active
+distributions](https://truelist.co/blog/linux-statistics/#:~:text=Today%2C%20there%20are%20over%20600%20active%20Linux%20distros.,-Another%20500%20are&text=Some%20of%20the%20most%20commonly,Linux%20distribution%20usage%20statistics%20show.)
+the proportion of the proprietary ones is negligible.
+
+There are no special limiting hardware requirements either. In fact, it runs
+90% of the public cloud workload, has 62% market share of embedded operating
+systems (from smart fridges to cars and airplanes), 99% of the supercomputer
+market share and 82% of all smartphones run on Linux.[^linux-market] This
+allows for maximum hardware customizability, i.e. almost any laptop or even a
+self-assembled PC, no matter how cheap, expensive, old or new, can run this OS
+absolutely for free.
+
+[^linux-market]: https://www.rackspace.com/en-gb/blog/realising-the-value-of-cloud-computing-with-linux
+
+Finally, one of the most significant "selling" points of Linux is its endless
+software customization capabilities. There is not a single thing that cannot be
+modified in this OS. Because the source code is open source, even the most
+fundamental parts such as the Kernel can be altered, recompiled and freely put
+into production. This allows for a maximum degree of flexibility both in terms
+of technical details (e.g. system security) and general aesthetics (e.g. the
+overall look and feel). Figure 5 shows examples of how Linux users customized
+their OS.
+
+| ![Linux rice 1](https://preview.redd.it/ptbibz0gdk861.png?width=640&crop=smart&auto=webp&s=49ae9646b1ccb7ec27a63a23381d144ae3219994) | ![Linux rice 2](https://preview.redd.it/4ew694tuiud81.jpg?width=640&crop=smart&auto=webp&s=919d90f9141b0f3392b70c5200e29e61eae9b347) |
+|--- | --- |
+|![Linux rice 3](https://preview.redd.it/ajgofc7utfz51.png?width=640&crop=smart&auto=webp&s=2e408335f8e6533281e34d86fd627e5c379e85b2) | ![Linux rice 4](https://preview.redd.it/5mjm5s90e7m41.png?width=640&crop=smart&auto=webp&s=52cf43dae248f57fb1fc23053944bc94878489ca) |
+
+*<p align="center"> Figure 5 </p>*
+
+*However, Linux is bad because reasons...*
 
 ## Which Linux?
