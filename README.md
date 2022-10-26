@@ -315,9 +315,10 @@ absolutely for free.
 Finally, one of the most significant "selling" points of Linux is its endless
 software customization capabilities. There is not a single thing that cannot be
 modified in this OS. Because the source code is open source, even the most
-fundamental parts such as the Kernel can be altered, recompiled and freely put
-into production. This allows for a maximum degree of flexibility both in terms
-of technical details (e.g. system security) and general aesthetics (e.g. the
+fundamental parts, such as the Kernel, can be altered,
+[recompiled](https://en.wikipedia.org/wiki/Compiler) and freely put into
+production. This allows for a maximum degree of flexibility both in terms of
+technical details (e.g. system security) and general aesthetics (e.g. the
 overall look and feel). Figure 5 shows examples of how Linux users customized
 their OS.
 
@@ -327,6 +328,19 @@ their OS.
 
 *<p align="center"> Figure 5 </p>*
 
-*However, Linux is bad because reasons...*
+However, whilst unlimited customization and a myriad of options is a major
+advantage for some, others may find it overwhelming. Nevertheless, this issue
+comes down to personal choice as it can be resolved by choosing a ready-to-go
+distribution like Ubuntu, Linux Mint or other.
+
+Another problem that may arise is software compatibility. Most of the
+proprietary software and especially video games are developed for Mac/Windows
+platforms, therefore some programs are not natively available on Linux. Whilst
+there is at least one great/better FOSS alternative available for almost any
+proprietary application, if it is strictly required to use a specific program,
+it may be inconvenient for the user. Of course there are workarounds to this,
+e.g. using a Windows VM ([Virtual
+Machine](https://en.wikipedia.org/wiki/Virtual_machine)) but it adds a level of
+complexity and requires some time and effort from the user.
 
 ## Which Linux?
