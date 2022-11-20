@@ -1,18 +1,25 @@
 # Linux: an OS You Control
 
 ## Table of Contents
-* [Abstract](#abstract)
-* [Remarks](#remarks)
-  + [Format](#format)
-  + [Activity Logging](#activity-logging)
-* [Why Linux?](#why-linux)
-  + [Operating Systems](#operating-systems)
-  + [Windows](#windows)
-  + [Mac OS](#mac-os)
-  + [Linux](#linux)
-* [Which Linux?](#which-linux)
+- [Abstract](#abstract)
+- [Remarks](#remarks)
+  * [Format](#format)
+  * [Activity Logging](#activity-logging)
+- [Why Linux?](#why-linux)
+  * [Operating Systems](#operating-systems)
+  * [Windows](#windows)
+  * [Mac OS](#mac-os)
+  * [Linux](#linux)
+- [Which Linux?](#which-linux)
+  * [Linux Distributions](#linux-distributions)
+  * [Everyday *VS* Specialised Use](#everyday--vs--specialised-use)
+  * [Beginner Friendly *VS* Advanced](#beginner-friendly--vs--advanced)
+  * [Desktop Environment *VS* Window Manager](#desktop-environment--vs--window-manager)
+  * [GUI *VS* CLI](#gui--vs--cli)
+  * [Stable *VS* Rolling Release](#stable--vs--rolling-release)
 
 ## Abstract
+*WIP*
 
 ## Remarks
 ### Format
@@ -343,4 +350,67 @@ e.g. using a Windows VM ([Virtual
 Machine](https://en.wikipedia.org/wiki/Virtual_machine)) but it adds a level of
 complexity and requires some time and effort from the user.
 
-## Which Linux?
+## Which Linux? 
+### Linux Distributions
+
+> A **Linux distribution** is an operating system made from a software collection
+> that includes the Linux kernel and, often, a [package management
+> system](https://en.wikipedia.org/wiki/Package_manager).[^linux-distro]
+
+[^linux-distro]: https://en.wikipedia.org/wiki/Linux_distribution
+
+There are **a lot** of Linux distributions *(fig. 6)* freely available for
+anybody to download for all kinds of purposes, therefore it is important to
+know at least a general categorisation in order to not get overwhelmed by
+choice and pick the right one.
+
+[![Linux Distributions
+Timeline](https://upload.wikimedia.org/wikipedia/commons/b/b5/Linux_Distribution_Timeline_21_10_2021.svg)](https://upload.wikimedia.org/wikipedia/commons/b/b5/Linux_Distribution_Timeline_21_10_2021.svg)
+*<p align="center"> Figure 6 </p>*
+
+### Everyday *VS* Specialised Use
+
+Linux is very flexible in terms of usage purposes. As a matter of fact, at the
+moment Linux is being run on tens of thousands of household PCs, as well as on
+some of the most advanced technological devices available to man, [like the
+SpaceX's Falcon 9
+rocket](https://www.zdnet.com/article/from-earth-to-orbit-with-linux-and-spacex/).
+
+In case you are not considering going to space at the moment, an everyday
+distribution might be the best choice. It is suitable for anybody who needs a
+computer to perform usual tasks, for example internet browsing, file
+management, note taking, creating and editing text documents, presentations,
+spreadsheets, etc. It is usually the case for people who want to move from
+Windows/Mac OS to Linux and are looking for something familiar and easy to
+learn. The most suitable and closest to the aforementioned OSs option, would be
+a beginner friendly desktop distribution *(see the [Beginner Friendly *VS*
+Advanced](#beginner-friendly--vs--advanced) and [Desktop Environment *VS*
+Window Manager](#desktop-environment--vs--window-manager) sections below)*.
+
+Gaming on Linux can be tricky as most of the game developers write software
+only with Windows and Mac OS in mind. However, every year compatibility is
+ceasing to be a major issue with new and improved [compatibility
+layers](https://en.wikipedia.org/wiki/Compatibility_layer) (e.g.
+[WINE](https://www.winehq.org/)), sets of supporting tools like
+[Proton](https://www.protondb.com/) and highly optimised gaming distributions.
+In fact, the combination of these facts along with Valve recently releasing the
+[Steam Deck](https://en.wikipedia.org/wiki/Steam_Deck) — a handheld console
+running Linux — has made releasing games for Linux require less effort in terms
+of coding, making it more profitable for game developers, consequently
+incentivising them to write high quality optimised code as they do for other
+major OSs. This has led to drastically improved performance, in some cases even [surpassing
+Windows](https://arstechnica.com/gaming/2012/08/valves-optimizations-make-linux-port-of-l4d2-outperform-windows-version/). Although the environment for any game can be set up yourself on
+most of the distributions, there are great off-the-shelf solutions like [Fedora
+Games spin](https://labs.fedoraproject.org/en/games/) or [Ubuntu
+GamePack](https://ualinux.com/en/ubuntu-gamepack), which guarantees the launch
+of more than 85000 games.
+
+*Programming, pentesting, etc.*
+
+### Beginner Friendly *VS* Advanced
+
+### Desktop Environment *VS* Window Manager
+
+### GUI *VS* CLI
+
+### Stable *VS* Rolling Release
