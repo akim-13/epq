@@ -12,11 +12,11 @@
   * [Linux](#linux)
 - [Which Linux?](#which-linux)
   * [Linux Distributions](#linux-distributions)
-  * [Everyday *VS* Specialised Use](#everyday--vs--specialised-use)
-  * [Beginner Friendly *VS* Advanced](#beginner-friendly--vs--advanced)
-  * [Desktop Environment *VS* Window Manager](#desktop-environment--vs--window-manager)
-  * [GUI *VS* CLI](#gui--vs--cli)
-  * [Stable *VS* Rolling Release](#stable--vs--rolling-release)
+  * [Everyday *VS* Specialised Use](#everyday-vs-specialised-use)
+  * [Beginner Friendly *VS* Advanced](#beginner-friendly-vs-advanced)
+  * [Desktop Environment *VS* Window Manager](#desktop-environment-vs-window-manager)
+  * [GUI *VS* CLI](#gui-vs-cli)
+  * [Stable *VS* Rolling Release](#stable-vs-rolling-release)
 
 ## Abstract
 *WIP*
@@ -381,11 +381,12 @@ distribution might be the best choice. It is suitable for anybody who needs a
 computer to perform usual tasks, for example internet browsing, file
 management, note taking, creating and editing text documents, presentations,
 spreadsheets, etc. It is usually the case for people who want to move from
-Windows/Mac OS to Linux and are looking for something familiar and easy to
-learn. The most suitable and closest to the aforementioned OSs option, would be
-a beginner friendly desktop distribution *(see the [Beginner Friendly *VS*
-Advanced](#beginner-friendly--vs--advanced) and [Desktop Environment *VS*
-Window Manager](#desktop-environment--vs--window-manager) sections below)*.
+Windows/Mac OS to Linux and are looking for something familiar and easy to use.
+The most suitable, and closest to the aforementioned OSs, option would be a
+beginner friendly distribution with a desktop environment *(see the [Beginner
+Friendly *VS* Advanced](#beginner-friendly-vs-advanced) and [Desktop
+Environment *VS* Window Manager](#desktop-environment-vs-window-manager)
+sections below)*.
 
 Gaming on Linux can be tricky as most of the game developers write software
 only with Windows and Mac OS in mind. However, every year compatibility is
@@ -398,19 +399,48 @@ In fact, the combination of these facts along with Valve recently releasing the
 running Linux — has made releasing games for Linux require less effort in terms
 of coding, making it more profitable for game developers, consequently
 incentivising them to write high quality optimised code as they do for other
-major OSs. This has led to drastically improved performance, in some cases even [surpassing
-Windows](https://arstechnica.com/gaming/2012/08/valves-optimizations-make-linux-port-of-l4d2-outperform-windows-version/). Although the environment for any game can be set up yourself on
-most of the distributions, there are great off-the-shelf solutions like [Fedora
-Games spin](https://labs.fedoraproject.org/en/games/) or [Ubuntu
+major OSs. This has led to drastically improved performance, in some cases even
+[surpassing
+Windows](https://arstechnica.com/gaming/2012/08/valves-optimizations-make-linux-port-of-l4d2-outperform-windows-version/).
+Although the environment for any game can be set up yourself on most of the
+distributions, there are great off-the-shelf solutions like [Fedora Games
+spin](https://labs.fedoraproject.org/en/games/) or [Ubuntu
 GamePack](https://ualinux.com/en/ubuntu-gamepack), which guarantees the launch
 of more than 85000 games.
 
-*Programming, pentesting, etc.*
+Those who want to use the OS for more technical purposes might find a minimal
+advanced distribution more appealing. For instance, distributions such as [Kali
+Linux](https://www.kali.org/) and [BackBox](https://www.backbox.org/) are
+perfect for [reverse
+engineering](https://en.wikipedia.org/wiki/Reverse_engineering), [computer
+forensics](https://en.wikipedia.org/wiki/Computer_forensics) and [penetration
+testing](https://en.wikipedia.org/wiki/Penetration_test), i.e. ethical hacking,
+as they include hundreds of built-in tools and utilities for such purpose. To
+set up a web server, [Debian](https://www.debian.org/intro/index#software) or
+[Ubuntu Server](https://ubuntu.com/server) might be a good choice. Both distros
+have an LTS (Long Term Support) version and mainly focus on stability in order
+to allow maximum uptime for any given website or service.
+[Tails](https://tails.boum.org/), a portable operating system that protects
+against surveillance and censorship, might be a life saver for people whose
+profession require that extra security, e.g. political journalists.
+
+Finally, if none of the distributions seem to be fit for purpose, or more
+likely, you want to learn more about Linux, create a system that perfectly
+suits you and are up for the challenge, there is a panacea. [Linux From
+Scratch](https://www.linuxfromscratch.org/) (LFS) is a project that gives a
+step-by-step instructions on how to build a Linux system from source, allowing
+for absolute control over each element of the system. Although the end result
+is a "perfect" OS and a huge amount of experience, the installation process is
+so complex and time consuming that not a lot of people dare to even attempt it.
 
 ### Beginner Friendly *VS* Advanced
+*WIP*
 
 ### Desktop Environment *VS* Window Manager
+*WIP*
 
 ### GUI *VS* CLI
+*WIP*
 
 ### Stable *VS* Rolling Release
+*WIP*
