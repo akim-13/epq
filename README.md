@@ -456,17 +456,44 @@ image](https://en.wikipedia.org/wiki/Optical_disc_image) off of an official
 distribution website and writing it to a USB device. After plugging it in the
 desired PC/laptop, a user will be greeted with a GUI installer *(fig 7)*,
 similar to what Windows uses, where a simple list of questions will be asked
-and the system will be ready for use in the matter of minutes.
+and the system will be ready for use in the matter of minutes. Figure 7 is an
+example of a GUI installer for the [Ubuntu](https://ubuntu.com/) distribution.
 
 ![Ubuntu GUI installer](https://assets.ubuntu.com/v1/e2bd1af8-download-updates.png) 
 *<p align="center"> Figure 7 </p>*
 
-Such distributions can
-be started to be used immediately after the installation process 
+After the initial setup is complete, no further configuration is required in
+order to start using the system. All the essential pieces of software will be
+pre-installed and active, so the user will not have to worry about setting up a
+graphical environment (usually a [DE](#desktop-environment-vs-window-manager)
+is a default option) or, for that matter, even installing a web browser or a
+file manager.
 
-The opposite is true for advanced distribution: **the more advanced a
-distribution is, the more different it is from mainstream OSs, i.e. more
-minimalistic.**
+Nonetheless, the opposite is true for advanced distribution: **the more
+advanced a distribution is, the more different it is intially from the
+mainstream OSs**. This is usually the case because advanced distros tend to be
+very minimalistic — they allow the user to have complete freedom over what
+software is installed, how it is configured and how it is utilised in the
+future. Consequently, the installation process is considerably more complex, as
+it requires the user to make a lot of choices related to even the most basic
+components of the system. For instance, [Arch Linux](https://archlinux.org/)
+only has [CLI](#gui-vs-cli) by default, meaning things like a display server,
+compositor, [DE/WM](#desktop-environment-vs-window-manager) must be installed
+manually in order to have any sort of GUI. Whereas distributions such as
+[Gentoo](https://www.gentoo.org/) are so minimal that to get a working system
+the user must first install, configure and compile a kernel, which is the core
+element of any OS.
+
+The table below subjectively ranks how *beginner friendly* or *advanced* some
+of the popular distributions are:
+
+|  | Beginner Friendly | Intermediate |  Advanced  |
+|--|-------------------|--------------|------------|
+|1.| Ubuntu            | Manjaro      | LFS        |
+|2.| Linux Mint        | Fedora       | Arch Linux |
+|3.| Pop!\_OS          | OpenSUSE     | Slackware  |
+|4.| Elementary OS     | EndeavourOS  | Gentoo     |
+|5.| Debian            | Garuda Linux | NixOS      |
 
 ### Desktop Environment *VS* Window Manager
 *WIP*
