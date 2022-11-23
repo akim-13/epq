@@ -252,7 +252,6 @@ of the hardware configurations provided by the company. The minimum price that
 has to be paid for the OS is equivalent to the price of the [cheapest official
 MacBook](https://www.apple.com/macbook-air-m1/) — $999.
 
-
 ### Linux
 
 In 1969, a team of developers of Bell Labs started a project to make a common
@@ -434,7 +433,40 @@ is a "perfect" OS and a huge amount of experience, the installation process is
 so complex and time consuming that not a lot of people dare to even attempt it.
 
 ### Beginner Friendly *VS* Advanced
-*WIP*
+
+Most of the distribution can be put on a spectrum ranging from *beginner
+friendly* to *advanced*. It is not an official or objective classification,
+however there are certain factors that make the "level" of a distribution quite
+evident. 
+
+How can an operating system be beginner friendly or advanced? It might seem
+like a strange concept, because the only available alternatives for comparison
+(for general public) are Windows and Mac OS. Although they might still require
+some time to understand and get used to, it is usually a matter of days, even
+for a total beginner. This makes sense, as these OSs were originally designed
+for a large audience, therefore a lot of usage simplification measures have
+taken place.
+
+This however is not the case for all Linux distributions. Generally, **the more
+beginner friendly a distribution is, the more similar it is to systems such as
+Mac OS and Windows**, as "beginner friendly" implies the intuitiveness of use.
+In order to start using such a distribution, first it has to be installed. The
+"hardest" part of the installation process is downloading an [ISO
+image](https://en.wikipedia.org/wiki/Optical_disc_image) off of an official
+distribution website and writing it to a USB device. After plugging it in the
+desired PC/laptop, a user will be greeted with a GUI installer *(fig 7)*,
+similar to what Windows uses, where a simple list of questions will be asked
+and the system will be ready for use in the matter of minutes.
+
+![Ubuntu GUI installer](https://assets.ubuntu.com/v1/e2bd1af8-download-updates.png) 
+*<p align="center"> Figure 7 </p>*
+
+Such distributions can
+be started to be used immediately after the installation process 
+
+The opposite is true for advanced distribution: **the more advanced a
+distribution is, the more different it is from mainstream OSs, i.e. more
+minimalistic.**
 
 ### Desktop Environment *VS* Window Manager
 *WIP*
