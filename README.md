@@ -477,15 +477,23 @@ software is installed, how it is configured and how it is utilised in the
 future. Consequently, the installation process is considerably more complex, as
 it requires the user to make a lot of choices related to even the most basic
 components of the system. For instance, [Arch Linux](https://archlinux.org/)
-only has [CLI](#gui-vs-cli) by default, meaning things like a display server,
-compositor, [DE/WM](#desktop-environment-vs-window-manager) must be installed
-manually in order to have any sort of GUI. Whereas distributions such as
+only has a [command line](#gui-vs-cli) by default *(fig 8)*, meaning things
+like a display server, compositor,
+[DE/WM](#desktop-environment-vs-window-manager) must be installed manually in
+order to have any sort of GUI. Whereas distributions such as
 [Gentoo](https://www.gentoo.org/) are so minimal that to get a working system
 the user must first install, configure and compile a kernel, which is the core
-element of any OS.
+element of any OS. Figure 8 shows how the first step of an Arch Linux
+installation process looks like.
+
+![Arch installer command
+prompt](https://www.linuxadictos.com/wp-content/uploads/Archinstall-en-Arch-Linux.png) 
+*<p align="center"> Figure 8 </p>*
 
 The table below subjectively ranks how *beginner friendly* or *advanced* some
 of the popular distributions are:
+
+<div align="center">
 
 |  | Beginner Friendly | Intermediate |  Advanced  |
 |--|-------------------|--------------|------------|
@@ -495,11 +503,68 @@ of the popular distributions are:
 |4.| Elementary OS     | EndeavourOS  | Gentoo     |
 |5.| Debian            | Garuda Linux | NixOS      |
 
+</div>
+
+*<p align="center"> Figure 9 </p>*
+
 ### Desktop Environment *VS* Window Manager
-*WIP*
+
+> A **Desktop Environment (DE)** is a collection of software running on top of an
+> operating system that makes up the desktop Graphical User Interface. It
+> usually includes everything from how the windows look and feel, to the style
+> of the icons, files, folders, and the mouse pointers. A desktop environment
+> also dictates what file manager to use, default text editor, image viewer,
+> wallpapers, and the interface used to log in and log out of the local
+> system.[^de-def]
+
+[^de-def]: https://www.computerhope.com/jargon/d/desktop-environment.htm
+
+In the systems such as Windows and Mac OS desktop environment is a core part of
+the OS itself. Although it is possible to change separate design elements
+(icons, window borders, etc.) or default programs (like a text editor or a file
+manager), of these DEs, it is not possible to fully replace it with another.
+For instance, a Windows user cannot simply download a Mac OS DE and enjoy all
+of its features, however it is feasible to make Windows look similar to Mac OS
+by manually configuring each desired element.
+
+As DEs are used by the major OSs and come with a lot of pre-installed software
+a new user might need, they are very popular among beginner friendly distros.
+In fact, all of the "Beginner Friendly" and most of the "Intermediate"
+distributions from [figure 9](#beginner-friendly-vs-advanced) come with a DE
+installed by default. Nonetheless, on Linux DE is separate from the OS and 
+therefore can be freely changed to either another DE or a window manager.
+Some of the most popular DEs amongst Linux users include: KDE Plasma, Gnome,
+XFCE and Cinnamon *(fig. 10)*.
+
+| ![KDE Plasma](https://kde.org/announcements/plasma/5/5.26.0/fullscreen_with_apps.png)    | ![Gnome](https://www.gnome.org/wp-content/uploads/2021/03/overview.png)     |
+|--------------- | --------------- |
+| ![XFCE](https://www.debugpoint.com/wp-content/uploads/2021/02/xfce416review.jpg)    | ![Cinnamon](https://wiki.manjaro.org/images/b/bc/Cinnamon-de-18.png)    |
+
+*<p align="center"> Figure 10 </p>*
+
+> A **Window Manager (WM)** is a software utility hat manages the overall
+> alignment and layout of graphical windows.[^wm-def]
+
+[^wm-def]: https://www.techopedia.com/definition/10043/window-manager
+
+In contrast to DEs, WMs are usually used in more advanced distros. The reason
+for it is because they are more minimalistic, light weight and efficient. As a
+matter of fact, a WM is a part of every DE. For example, when a Windows user
+closes, minimises, moves windows or utilises a [snap
+assist](https://support.microsoft.com/en-us/windows/snap-your-windows-885a9b1e-a983-a3b1-16cd-c531795e6241)
+*(fig. 11)* it is all done by the built-in WM.
+
+![Windows WM](https://evanston.zendesk.com/hc/article_attachments/360081086394/Gif__13_.gif) 
+*<p align="center"> Figure 11 </p>*
+
+
 
 ### GUI *VS* CLI
-*WIP*
+There are two main ways a user can interact with an OS:
+1. By using a Graphical User Interface
+   ([GUI](https://en.wikipedia.org/wiki/Graphical_user_interface))
+2. By entering commands in the terminal, i.e. by using a Command Line Interface
+   ([CLI](https://en.wikipedia.org/wiki/Command-line_interface))
 
 ### Stable *VS* Rolling Release
 *WIP*
