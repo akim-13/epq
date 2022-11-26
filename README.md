@@ -584,7 +584,10 @@ because WMs heavily utilise the idea of separate **workspaces** (also called
 **tags** or **tabs**). This allows for multitasking as all the windows related
 to one activity can be on one tag, another activity on the other tag, and none
 of the windows from different activities/tags mix up and interfer with each
-other.
+other. Figure 12 is an example of a tiling WM in action.
+
+![Xmonad WM](http://www.eng.uwaterloo.ca/~aavogt/xmonad/demo.gif) 
+*<p align="center"> Figure 12 </p>*
 
 A **Dynamic** window manager is a hybrid between a stacking and tiling WMs. They have
 all the properties of a tiling WM, however they also allow to dynamically
@@ -610,6 +613,18 @@ There are two main ways a user can interact with an OS:
    ([GUI](https://en.wikipedia.org/wiki/Graphical_user_interface))
 2. By entering commands in the terminal, i.e. by using a Command Line Interface
    ([CLI](https://en.wikipedia.org/wiki/Command-line_interface))
+
+GUI is used by the commercial OSs and it is the most popular and
+straightforward way to interact with the system. It involves menus, buttons and
+everything else that requires to be interacted with a cursor. This is great for
+new users, as anything they might want to do is presented on the screen. A
+proper [UI](https://en.wikipedia.org/wiki/User_interface) and
+[UX](https://en.wikipedia.org/wiki/User_experience) make everything very
+intuitive, therefore in most cases minimal learning time and experience are
+needed to get started.
+
+When first computer were made, the only way to interact with them was by
+entering commands. 
 
 ### Stable *VS* Rolling Release
 *WIP*
