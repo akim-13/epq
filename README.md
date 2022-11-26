@@ -522,7 +522,7 @@ of the popular distributions are:
 In the systems such as Windows and Mac OS desktop environment is a core part of
 the OS itself. Although it is possible to change separate design elements
 (icons, window borders, etc.) or default programs (like a text editor or a file
-manager), of these DEs, it is not possible to fully replace it with another.
+manager) of these DEs, it is not possible to fully replace it with another.
 For instance, a Windows user cannot simply download a Mac OS DE and enjoy all
 of its features, however it is feasible to make Windows look similar to Mac OS
 by manually configuring each desired element.
@@ -536,9 +536,9 @@ therefore can be freely changed to either another DE or a window manager.
 Some of the most popular DEs amongst Linux users include: KDE Plasma, Gnome,
 XFCE and Cinnamon *(fig. 10)*.
 
-| ![KDE Plasma](https://kde.org/announcements/plasma/5/5.26.0/fullscreen_with_apps.png)    | ![Gnome](https://www.gnome.org/wp-content/uploads/2021/03/overview.png)     |
+| ![KDE Plasma](https://kde.org/announcements/plasma/5/5.26.0/fullscreen_with_apps.png)| ![Gnome](https://www.gnome.org/wp-content/uploads/2021/03/overview.png)|
 |--------------- | --------------- |
-| ![XFCE](https://www.debugpoint.com/wp-content/uploads/2021/02/xfce416review.jpg)    | ![Cinnamon](https://wiki.manjaro.org/images/b/bc/Cinnamon-de-18.png)    |
+| ![XFCE](https://www.debugpoint.com/wp-content/uploads/2021/02/xfce416review.jpg)| ![Cinnamon](https://wiki.manjaro.org/images/b/bc/Cinnamon-de-18.png)|
 
 *<p align="center"> Figure 10 </p>*
 
@@ -557,7 +557,52 @@ assist](https://support.microsoft.com/en-us/windows/snap-your-windows-885a9b1e-a
 ![Windows WM](https://evanston.zendesk.com/hc/article_attachments/360081086394/Gif__13_.gif) 
 *<p align="center"> Figure 11 </p>*
 
+There are 3 main types of WMs:
+1. Stacking (a.k.a floating)
+2. Tiling
+3. Dynamic
 
+**Stacking** WMs are the ones used in Windows/Mac OS. If several windows are opened
+at a time, by default they are in what is called a "floating" layout, meaning
+the windows are not maximised, not aligned and can overlap *(see the beginning
+of fig. 11)*. This is not a very efficient approach, as a lot of space is being
+unused in the process and the user has not manually rearrange the windows,
+spending more time organising the space instead of doing the actual work.
+
+**Tiling** WMs "tile" the windows *(surprisingly)* so that none are overlapping.
+When the first window is opened it takes up 100% of the workspace. The
+following opened windows will behave differently depending on a layout, however
+the main idea is that 100% of the workspace is utilised at all times, e.g. for
+two windows each will take up 50% of the screen, for three — 50%, 25% and 25%,
+etc. Due to such automatic window management the use of mouse/touchpad becomes
+unnecessary. Most of the users' hands usually rest on a keyboard, so making it
+possible to perform any operation with windows without touching a
+mouse/touchpad, i.e. only utilising shortcuts and key combinations,
+significantly increases productivity in the long run by improving the overall
+speed and workflow. Moreover, usually windows cannot be minimised (hidden)
+because WMs heavily utilise the idea of separate **workspaces** (also called
+**tags** or **tabs**). This allows for multitasking as all the windows related
+to one activity can be on one tag, another activity on the other tag, and none
+of the windows from different activities/tags mix up and interfer with each
+other.
+
+A **Dynamic** window manager is a hybrid between a stacking and tiling WMs. They have
+all the properties of a tiling WM, however they also allow to dynamically
+switch between tiling and floating window layouts, basically the best of both
+worlds.
+
+The main disadvantage to using a tiling/dynamic WM is a steep learning curve.
+Both types make very extensive use of key-bindings and have less (or no)
+reliance on the mouse, so the user must remember, get used to and also
+configure a number of key combinations. Furthermore, configuration usually does
+not involve a GUI and is done directly inside a config file making it necessary
+to be able to edit text and in some cases requires some knowledge of
+programming.
+
+The following website provides [a table that extensively compares the most
+popular
+WMs](https://wiki.archlinux.org/title/Comparison_of_tiling_window_managers)
+such as DWM, bspwm, Xmonad and others.
 
 ### GUI *VS* CLI
 There are two main ways a user can interact with an OS:
