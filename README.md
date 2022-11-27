@@ -617,14 +617,36 @@ There are two main ways a user can interact with an OS:
 GUI is used by the commercial OSs and it is the most popular and
 straightforward way to interact with the system. It involves menus, buttons and
 everything else that requires to be interacted with a cursor. This is great for
-new users, as anything they might want to do is presented on the screen. A
+new users, as anything they might want to do is displayed on the screen. A
 proper [UI](https://en.wikipedia.org/wiki/User_interface) and
 [UX](https://en.wikipedia.org/wiki/User_experience) make everything very
 intuitive, therefore in most cases minimal learning time and experience are
-needed to get started.
+needed to get started. 
 
-When first computer were made, the only way to interact with them was by
-entering commands. 
+In the early days, when the notion of a PC did not exist, there were computer
+terminals — the predecessors of modern computers. The only way no interact with
+such machines was to type out the commands. This did not appeal to the general
+public, as a lot of commands had to be memorised, however this was, and still
+is, the most efficient way of interacting with an OS. A GUI cannot account for
+every action a user might want to take, whereas commands are much more
+versatile and can tell the computer precisely what to do. A case in point,
+renaming files in bulk is a common issue that even a regular user might
+encounter. Suppose a time stamp is needed to be appended to each of the 100
+files. It is unlikely that a graphical file manager would have such an option,
+therefore the only way to do it through a GUI is manually. Although quite
+unreasonable and time consuming, it is possible to do with 100 files.
+Nevertheless, this method would quickly become unsustainable as the number of
+files grows, whereas with a use of basic commands this issue can be solved much
+faster and with a lot less effort. This holds true not only for such specific
+use cases, but for everyday system managment as well, e.g. moving, renaming,
+deleting files, changing system settings, configuring applications, etc.
+
+GUIs have their use cases. For example, it would be unreasonable or even
+impossible to Photoshop pictures or edit videos using commands. However, for
+everyday system administration using commands is a more time and space
+efficient solution (CLI applications take up less storage space). Although the
+obvious drawback is the time and effort that have to be invested in order to
+use the commands efficiently.
 
 ### Stable *VS* Rolling Release
 *WIP*
