@@ -1,4 +1,4 @@
-# Linux: an OS You Control
+# Linux: The OS You Control
 
 ## Table of Contents
 - [Abstract](#abstract)
@@ -11,12 +11,24 @@
   * [Mac OS](#mac-os)
   * [Linux](#linux)
 - [Which Linux?](#which-linux)
-  * [Linux Distributions](#linux-distributions)
-  * [Everyday *VS* Specialised Use](#everyday-vs-specialised-use)
-  * [Beginner Friendly *VS* Advanced](#beginner-friendly-vs-advanced)
-  * [Desktop Environment *VS* Window Manager](#desktop-environment-vs-window-manager)
-  * [GUI *VS* CLI](#gui-vs-cli)
-  * [Stable *VS* Rolling Release](#stable-vs-rolling-release)
+    * [Linux Distributions](#linux-distributions)
+    * [Everyday *VS* Specialised Use](#everyday-vs-specialised-use)
+    * [Beginner Friendly *VS* Advanced](#beginner-friendly-vs-advanced)
+    * [Desktop Environment *VS* Window Manager](#desktop-environment-vs-window-manager)
+    * [GUI *VS* CLI](#gui-vs-cli)
+    * [Stable *VS* Rolling Release](#stable-vs-rolling-release)
+- [My Linux](#my-linux)
+    * [Distribution](#distribution)
+    * [Core Utilities](#core-utilities)
+        + [Graphical Environment](#graphical-environment)
+        + [Security](#security)
+    * [Command Line](#command-line)
+        + [Shell](#shell)
+        + [Text Editor](#text-editor)
+    * [GUI Applications](#gui-applications)
+    * [Backup System](#backup-system)
+        + [Partial Backup](#partial-backup)
+        + [Full System Backup](#full-system-backup)
 
 ## Abstract
 *WIP*
@@ -699,3 +711,47 @@ require a lot of time to fix. However when it does, it might be hard for a new
 user to quickly find a working solution, therefore most of the distros listed
 under the "intermediate" and "advanced" columns in [figure
 9](#beginner-friendly-vs-advanced) are rolling release.
+
+
+## My Linux
+
+### Distribution
+*WIP*
+
+
+### Core Utilities
+*WIP*
+
+#### Graphical Environment
+*WIP*
+
+#### Security
+*WIP*
+
+
+### Command Line
+*WIP*
+
+#### Shell
+*WIP*
+
+#### Text Editor
+*WIP*
+
+
+### GUI Applications
+*WIP*
+
+
+### Backup System
+*WIP*
+
+#### Partial Backup
+*WIP*
+
+#### Full System Backup
+*WIP*
+
+
+### Future Improvements
+*WIP*
