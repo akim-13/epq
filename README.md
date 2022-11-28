@@ -638,7 +638,7 @@ unreasonable and time consuming, it is possible to do with 100 files.
 Nevertheless, this method would quickly become unsustainable as the number of
 files grows, whereas with a use of basic commands this issue can be solved much
 faster and with a lot less effort. This holds true not only for such specific
-use cases, but for everyday system managment as well, e.g. moving, renaming,
+use cases, but for everyday system management as well, e.g. moving, renaming,
 deleting files, changing system settings, configuring applications, etc.
 
 GUIs have their use cases. For example, it would be unreasonable or even
@@ -649,4 +649,53 @@ obvious drawback is the time and effort that have to be invested in order to
 use the commands efficiently.
 
 ### Stable *VS* Rolling Release
-*WIP*
+
+> A **software release life cycle** is the sum of the stages of development and
+> maturity for a piece of computer software ranging from its initial
+> development to its eventual release, and including updated versions of the
+> released version to help improve software or fix software bugs still present
+> in the software.[^release-cycle]
+
+[^release-cycle]: https://en.wikipedia.org/wiki/Software_release_life_cycle
+
+There are many different types of software release life cycles, however two of
+the most common ones when it comes to Linux distributions are stable and
+rolling releases. It is important to distinguish between the two because they
+both have prons and cons, and can affect the way a user interacts with the
+system, e.g. the frequency of updates and ease of troubleshooting. 
+
+The **Stable release** (also known as fixed, static or versioned release)
+distributions are the ones that hold back the updates and new software packages
+for a fixed period until a new version of an OS is relesed. The only exception
+is the essential security updates that come out more frequently in order to
+ensure the overall security of the system. The main idea behind this model is
+that all applications are thorougly tested at first for software bugs and
+compatibility issues and only then released to the public. This is advantageuos
+to new users, as they usually do not have to deal with the aforementioned
+issues themselves and more often than not everything works out of the box. In
+theory this results in a more stable system with an excellent inter-package 
+compatibility. With that said, if the developers fail to properly test an
+essential package, for example a web browser, the user might need to wait for a
+fix for several months until a new version is released. Furthermore, eventully
+a version of an OS the user runs will stop being actively supported by the
+developers and would have to be reinstalled. For instance, this happened with
+Windows 8 in 2016, so in order to keep getting all the essential updates the
+users had to upgrade to Windows 10. The most popular stable release
+distributions are listed in [figure 9](#beginner-friendly-vs-advanced) under
+the "beginner friendly" column.
+
+The **Rolling release** distributions on the other hand do not have a single
+version. Instead the packages may be updated as soon as a new version of a
+package comes out, allowing the users to be on the bleeding edge and have "the
+latest and greatest software". Such software release cycle requires the system
+to be updated on a weekly basis in order to not encounter conflicting packages
+when too many of them are updated at once. This does not guarantee that there
+will not be any issues with applications, and in fact on average more issues
+related to updates will have to be resolved compared to stable release.
+Troubleshooting might also be a bit trickier, as it is easier to find a
+solution on the internet for a specific version of a package and distribution.
+From personal experience, this happens quite infrequently and usually does not
+require a lot of time to fix. However when it does, it might be hard for a new
+user to quickly find a working solution, therefore most of the distros listed
+under the "intermediate" and "advanced" columns in [figure
+9](#beginner-friendly-vs-advanced) are rolling release.
