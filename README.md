@@ -19,9 +19,9 @@
     * [Stable *VS* Rolling Release](#stable-vs-rolling-release)
 - [My Linux](#my-linux)
     * [Distribution](#distribution)
-    * [Core Utilities](#core-utilities)
-        + [Graphical Environment](#graphical-environment)
+    * [Core Setup](#core-setup)
         + [Security](#security)
+        + [Graphical Environment](#graphical-environment)
     * [Command Line](#command-line)
         + [Shell](#shell)
         + [Text Editor](#text-editor)
@@ -786,7 +786,6 @@ opportunity to learn how to resolve these issues and get more knowledge and
 experience as a result.
 
 ### Core Setup
-*kernel, encryption, users*
 
 #### Security
 
@@ -804,7 +803,9 @@ files I decided to encrypt an entire system using [LVM on
 LUKS](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS).
 An example disk layout from the guide is presented in *figure 13* and it is
 very similar to my actual disk layout with two encrypted logical volumes (SWAP
-and root) and a separate boot partition *(figure 14)*.
+and root) and a separate boot partition, see *figure 14* (the `$` denotes the
+command prompt for an unprivileged user and everything below it is the output
+of a ran command). 
 
 ```
 +-----------------------------------------------------------------------+ +----------------+
@@ -833,6 +834,25 @@ nvme0n1          259:0    0 953.9G  0 disk
     └─crypt-root 254:2    0 937.6G  0 lvm   /
 ```
 *<p align="center"> Figure 14 </p>*
+
+There are two user account set up on the system:
+1. Normal (unprivileged) user
+2. Root (full privilege) user a.k.a. the
+   [superuser](https://en.wikipedia.org/wiki/Superuser)
+
+It is a standard setup for most of the personal-use Linux systems, which is
+done mainly for security purposes. The everyday system use is done on a normal
+account, however when there is a need to alter system configuration either by
+running commands or editing system files, install and remove software or
+perform any other action that requires elevated privilege, it is done on a root
+account. In order to run commands as root, there are CLI utilities available
+such as [sudo](https://wiki.archlinux.org/title/Sudo) or
+[doas](https://wiki.archlinux.org/title/Doas), both of which are installed on
+the system. The accounts have separate passwords, which are usually required
+for logging in to the system. However, I skipped this step entirely by setting
+up an automatic login system with
+[getty](https://wiki.archlinux.org/title/Getty) because there is already a
+password protection from the encryption method described above.
 
 #### Graphical Environment
 *WIP*
