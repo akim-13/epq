@@ -716,16 +716,82 @@ under the "intermediate" and "advanced" columns in [figure
 ## My Linux
 
 ### Distribution
-*WIP*
 
+The distribution I picked for this project is [Arch
+Linux](https://archlinux.org/). From the official website:
+
+> [...] Arch Linux, a lightweight and flexible Linux® distribution that tries to Keep
+> It Simple.[^arch-linux]
+
+[^arch-linux]: https://archlinux.org/
+
+As the quote suggests, this is a multi-purpose "bare-bones" distribution that
+allows for a very high degree of control over each element of the system. Prior
+to doing the project I already had some experience with beginner friendly
+distros like [Linux Mint](https://linuxmint.com/) and [KDE
+neon](https://neon.kde.org/) but wanting to learn more about the OS, this time
+I picked a more advanced distribution. This has challenged me to step out of
+the comfort zone, see how everything works on the inside and consequently apply
+the knowledge in order to fully personalise the system.
+
+One of the major reasons I picked this particular distribution is the amount of
+high quality information and support available on the internet. Arch has a very
+extensive official documentation called the
+[ArchWiki](https://wiki.archlinux.org/title/ArchWiki:About) that provides a lot
+of essential information on anything related to the system: available software
+and its purposes, how the system is structured, how different elements of the
+system interact with each other, and importantly how to install the system
+using a large range of available options. This is an excellent community-driven
+source of information, which is helpful both for new and experienced users.
+Moreover, Arch is one of the most popular advanced distributions, meaning there
+is a lot of support available online from the community in various forms:
+YouTube videos, blog posts, forums, etc. The combination of these factors has
+been a life saver throughout the entire project and especially during the
+installation process, which is done fully through the use of commands. The
+first thing a user is greeted with is a [Linux
+console](https://wiki.archlinux.org/title/Linux_console) *([figure
+8](#beginner-friendly-vs-advanced))*, i.e. there is no graphical environment.
+Since I have never dealt with something like that before, I had to fully erase
+the hard drive and restart the installation for quite a few times. However,
+eventually I got a basic functioning system and could start the configuration
+process.
+
+To install new software on a Linux system a user does not have to go on the
+Internet and search for applications like on Windows for instance. Instead
+there is a much more convenient way — a package manager.
+
+> A **package manager** or package-management system is a collection of software
+> tools that automates the process of installing, upgrading, configuring, and
+> removing computer programs for a computer in a consistent
+> manner.[^package-manager]
+
+[^package-manager]: https://en.wikipedia.org/wiki/Package_manager
+
+Every Linux distro has its own package manager. For Arch it is
+[pacman](https://wiki.archlinux.org/title/Pacman). It allows the user to deal
+with all the packages installed (or to be installed) on the system in a very
+efficient manner and offers some advantageous features over the other package
+managers. A case in point, is parallel downloads. It accelerates the process of
+downloading software from the [official
+repositories](https://wiki.archlinux.org/title/Official_repositories) by
+downloading multiple packages simultaneously instead of sequentially. Moreover,
+Arch has one of the largest community-driven repositories called the Arch User
+Repository ([AUR](https://wiki.archlinux.org/title/Arch_User_Repository)),
+which currently has over [81000 packages](https://aur.archlinux.org/)
+available. Furthermore, Arch has all the benefits of a [rolling
+release](#stable-vs-rolling-release) distro, along with all the downsides of
+course. However, as the main disadvantage of such release life cycle is more
+frequent package conflicts and potential system breakages, it gives me another
+opportunity to learn how to resolve these issues and get more knowledge and
+experience as a result.
 
 ### Core Utilities
 *WIP*
 
-#### Graphical Environment
+#### Security
 *WIP*
 
-#### Security
+#### Graphical Environment
 *WIP*
 
 
