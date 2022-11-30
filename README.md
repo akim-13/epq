@@ -785,11 +785,54 @@ frequent package conflicts and potential system breakages, it gives me another
 opportunity to learn how to resolve these issues and get more knowledge and
 experience as a result.
 
-### Core Utilities
-*WIP*
+### Core Setup
+*kernel, encryption, users*
 
 #### Security
-*WIP*
+
+There are multiple [officially supported
+kernels](https://wiki.archlinux.org/title/Kernel#Officially_supported_kernels)
+available, including the
+[hardened](https://github.com/anthraxx/linux-hardened), security-focused one.
+Moreover, there is an option of a custom kernel that a user can compile
+themselves for a better performance, enhanced security and other reasons.
+However, this is not an easy process and it is out of scope of this project, so
+I went along with the [vanilla Linux kernel](https://www.kernel.org/).
+
+By default the system does not have any encryption, so in order to protect the
+files I decided to encrypt an entire system using [LVM on
+LUKS](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS).
+An example disk layout from the guide is presented in *figure 13* and it is
+very similar to my actual disk layout with two encrypted logical volumes (SWAP
+and root) and a separate boot partition *(figure 14)*.
+
+```
++-----------------------------------------------------------------------+ +----------------+
+| Logical volume 1      | Logical volume 2      | Logical volume 3      | | Boot partition |
+|                       |                       |                       | |                |
+| [SWAP]                | /                     | /home                 | | /boot          |
+|                       |                       |                       | |                |
+| /dev/MyVolGroup/swap  | /dev/MyVolGroup/root  | /dev/MyVolGroup/home  | |                |
+|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
+|                                                                       | | other device)  |
+|                         LUKS2 encrypted partition                     | |                |
+|                           /dev/sda1                                   | | /dev/sdb1      |
++-----------------------------------------------------------------------+ +----------------+
+```
+*<p align="center"> Figure 13 </p>*
+
+```
+$ lsblk
+
+NAME             MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINTS
+nvme0n1          259:0    0 953.9G  0 disk
+├─nvme0n1p1      259:1    0   256M  0 part  /boot
+└─nvme0n1p2      259:2    0 953.6G  0 part
+  └─cryptlvm     254:0    0 953.6G  0 crypt
+    ├─crypt-swap 254:1    0    16G  0 lvm   [SWAP]
+    └─crypt-root 254:2    0 937.6G  0 lvm   /
+```
+*<p align="center"> Figure 14 </p>*
 
 #### Graphical Environment
 *WIP*
