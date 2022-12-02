@@ -855,8 +855,141 @@ up an automatic login system with
 password protection from the encryption method described above.
 
 #### Graphical Environment
-*WIP*
+> The **display server** is a software layer responsible for capturing
+> interactions from the user’s mouse and keyboard as well as communicating with
+> the kernel to render graphics on the screen. *(Adaptation)* [^display-server]
 
+[^display-server]: https://sgfault.com/post/2016/8/2016-08-22-display-server-primer/
+
+![Display server](https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/12/Schema_of_the_layers_of_the_graphical_user_interface.svg?q=50&fit=crop&w=1500&dpr=1.5) 
+*<p align="center"> Figure 15 </p>*
+
+There are currently two major competing display servers on Linux, namely
+**Xorg** and **Wayland**. The latter was founded in 2008 as Kristian Hogsberg's
+personal project dedicated to replace Xorg. It is free and open source and is
+"marketed" as a "a modern, secure, and more straightforward windowing system".
+Although Xorg is a relatively older project and has a fair bit of [legacy
+code](https://en.wikipedia.org/wiki/Legacy_system), it is the most popular
+display server to date. Consequently, it is well documented, currently supports
+more software and has less issues, therefore I chose it over Wayland. In order
+to have features such as window transparency, transition animations, drop
+shadows around windows and
+[Vsync](https://en.wikipedia.org/wiki/Vsync_(computing)), I use a standalone
+[compositor](https://wiki.archlinux.org/title/Xorg#Composite) called
+[picom](https://wiki.archlinux.org/title/Picom), a
+[fork](https://en.wikipedia.org/wiki/Fork_(software_development)) of
+[compton](https://github.com/chjj/compton/).
+
+My window manager of choice is a fork [DWM](https://dwm.suckless.org/) called
+[DWM Felxipatch](https://github.com/bakkeby/dwm-flexipatch). Vanilla DWM is a
+very minimal Dynamic Window Manager that follows the [suckless
+philoshopy](https://suckless.org/philosophy/). It is written in C programming
+language and relies on the mechanism of applying different
+[patches](https://suckless.org/philosophy/) by semi-manually changing the
+source code. These are small chunks of code written by other users that extend
+the functionality of the WM. For instance, there are patches that add window
+layouts, allow for status bar customization, introduce new window behaviours,
+etc. Although it is relatively straightforward to apply a small number of
+patches yourself (as I did in the past), the more patches there are, the more
+time consuming and problematic the process of applying becomes. I found
+Flexipatch to be a great solution for this issue, as it already has all the
+patches applied to the source code and allows to just switch them on and off
+simply by putting either 1 or 0 for each patch in the [header
+file](https://github.com/bakkeby/dwm-flexipatch/blob/master/patches.def.h). The
+source code for my configuration can be found on my GitHub page
+[here](https://github.com/akim-13/dwm). Some of the current functionality and
+key sequences are presented in *figure 16*. As can be seen from the number of
+shortcuts, my configuration heavily relies on the keyboard usage, mainly for
+efficiency purposes.
+
+Usage: `SUPER` a.k.a. `WINDOWS key` + `<key sequence>`
+
+| Key sequence             | Description                                                    |
+|--------------------------|----------------------------------------------------------------|
+|`j`                       |  Focus next window                                             |
+|`k`                       |  Focus previous window                                         |
+|`J`                       |  Move focused window down the stack                            |
+|`K`                       |  Move focused window up the stack                              |
+|`ENTER`                   |  Make focused window master                                    |
+|`h`                       |  Decrease master size                                          |
+|`l`                       |  Increase master size                                          |
+|`q`                       |  Close focused window                                          |
+|`<NUM>`                   |  Toggle between previously selected tags and `<NUM>`           |
+|`<NUM1>` + `<NUM2>`       |  Select multiple tags                                          |
+|`CTRL` + `<NUM>`          |  Add tag `<NUM>` to focus (select multiple tags)               | 
+|`SHIFT` + `<NUM>`         |  Move focused window to tag `<NUM>`                            |
+|`CTRL` + `SHIFT` + `<NUM>`|  Show selected window on both current and `<NUM>` tags (toggle)|
+|`TAB`                     |  Cycle forwards through layouts                                |
+|`SHIFT` + `TAB`           |  Cycle backwards through layouts                               |
+|`SHIFT` + `BACKSPACE`     |  Shutdown                                                      |
+|`Q`                       |  Restart DWM                                                   |
+|`R`                       |  Restart                                                       |
+|`CTRL` + `f`              |  Fullscreen                                                    |
+|`CTRL` + `t`              |  Tile layout                                                   |
+|`CTRL` + `m`              |  Monocle layout                                                |
+|`CTRL` + `b`              |  Bottom Stack layout                                           |
+|`CTRL` + `c`              |  Centered Master layout                                        |
+|`CTRL` + `d`              |  Deck layout                                                   |
+|`CTRL` + `s`              |  Fibonacci (Spiral) layout                                     |
+|`CTRL` + `g`              |  Grid layout                                                   |
+|`CTRL` + `a`              |  Float layout                                                  |
+|`m`                       |  Increment the number of masters                               |
+|`M`                       |  Decrement the number of masters                               |
+|`=`                       |  Increase gap size                                             |
+|`-`                       |  Decrease gap size                                             |
+|`SHIFT` + `=`             |  Default gap size                                              |
+|`SHIFT` + `-`             |  Toggle gaps                                                   |
+|`w`                       |  Increase window weight (size) in the stack                    |
+|`W`                       |  Decrease window weight (size) in the stack                    |
+|`CTRL` + `w`              |  Set window weight (size) to default                           |
+|`t`                       |  Transfer focused window in the stack to master and vice versa |
+
+*<p align="center"> Figure 16 </p>*
+
+![Status bar](./attachments/status-bar.png) 
+*<p align="center"> Figure 17 </p>*
+
+*Figure 17* shows how the default working environment looks without any windows
+open. Notice the absence of icons and application shortcuts on the "desktop"
+area. The application are launched either by using a shortcut set up with a
+hotkey daemon [sxhkd](https://github.com/baskerville/sxhkd) or a text-based
+application launcher, in my case [rofi](https://github.com/davatorium/rofi).
+The configurations for these and following programs can be found in [my
+`dotfiles` repository](https://github.com/akim-13/dotfiles), which is a jargon
+for configuration files on Linux located in the `.config` directory.
+
+At the bottom of *figure 17* is a status bar, which is also a part of DWM. It
+uses a [fork of dwmblocks](https://github.com/LukeSmithxyz/dwmblocks) in order
+to easily add and updated the information modules or "blocks" (labeled 3 --
+12). Each block is a [shell script](https://en.wikipedia.org/wiki/Shell_script)
+adopted or coded [by
+myself](https://github.com/akim-13/dwmblocks/tree/master/blocks). The elements
+of the status bar are as follows:
+
+1. Tags (working spaces)
+2. Current window layout
+3. Connected Wi-Fi network
+4. Internet download speed
+5. Uptime 
+6. The average of CPU and GPU temperatures
+7. Brightness level
+8. Volume level
+9. Charging indicator and battery level
+10. Keyboard layout
+11. Date
+12. Time
+
+
+
+*Figure 18* is a showcase of some of the operations that can be performed with
+windows and *figure 19* shows 6 different layouts. (*Quality and visual
+artifacts are present due to recording faults and compression.*)
+
+![DWM showcase](./attachments/dwm-showcase.gif) 
+*<p align="center"> Figure 18 </p>*
+
+![Layouts](./attachments/layouts.gif) 
+*<p align="center"> Figure 19 </p>*
 
 ### Command Line
 *WIP*
