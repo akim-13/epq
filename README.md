@@ -979,17 +979,18 @@ of the status bar are as follows:
 11. Date
 12. Time
 
-
-
 *Figure 18* is a showcase of some of the operations that can be performed with
-windows and *figure 19* shows 6 different layouts. (*Quality and visual
-artifacts are present due to recording faults and compression.*)
+windows and *figure 19* shows 6 different layouts. *(Visual artifacts appear only on the recordings 
+and are not present on the actual system)*
 
-![DWM showcase](./attachments/dwm-showcase.gif) 
+https://user-images.githubusercontent.com/77539913/205385936-8916ba63-2dfe-48ba-b70c-19b0d27a6108.mp4
+
 *<p align="center"> Figure 18 </p>*
 
-![Layouts](./attachments/layouts.gif) 
+https://user-images.githubusercontent.com/77539913/205385777-9f3e8049-ef57-47a4-b703-1c92cc61211e.mp4
+
 *<p align="center"> Figure 19 </p>*
+
 
 ### Command Line
 *WIP*
