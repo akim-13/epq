@@ -980,8 +980,8 @@ of the status bar are as follows:
 12. Time
 
 *Figure 18* is a showcase of some of the operations that can be performed with
-windows and *figure 19* shows 6 different layouts. *(Visual artifacts appear only on the recordings 
-and are not present on the actual system)*
+windows and *figure 19* shows 6 different layouts. *(Visual artifacts appear
+only on the recordings and are not present on the actual system)*
 
 https://user-images.githubusercontent.com/77539913/205385936-8916ba63-2dfe-48ba-b70c-19b0d27a6108.mp4
 
