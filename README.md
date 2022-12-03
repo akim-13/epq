@@ -23,12 +23,13 @@
         + [Security](#security)
         + [Graphical Environment](#graphical-environment)
     * [Command Line](#command-line)
+        + [Terminal Emulator](#terminal-emulator)
         + [Shell](#shell)
         + [Text Editor](#text-editor)
-    * [GUI Applications](#gui-applications)
     * [Backup System](#backup-system)
         + [Partial Backup](#partial-backup)
         + [Full System Backup](#full-system-backup)
+    * [Future Improvements](#future-improvements)
 
 ## Abstract
 *WIP*
@@ -993,16 +994,96 @@ https://user-images.githubusercontent.com/77539913/205385777-9f3e8049-ef57-47a4-
 
 
 ### Command Line
-*WIP*
+#### Terminal Emulator
+
+> A **terminal emulator** (sometimes also referred to as a **tty**) emulates a
+> video terminal within another display architecture (e.g. in X). This usually
+> takes the form of a window in which the user can enter commands and view
+> output, or of a fullscreen virtual console.[^terminal-emulator]
+
+[^terminal-emulator]: https://wiki.gentoo.org/wiki/Terminal_emulator
+
+A terminal emulator is a crucial part of the system. All of the manipulations
+with files, system configuration, software installation, running CLI
+applications and many more actions are done by using commands. However in order
+to use them, they first have to be entered somewhere. That is where a terminal
+emulator comes in. A user types out a command in the command prompt, then it
+gets processed and executed by the [shell](#shell) and the output is displayed
+afterwards. All of it is done inside a terminal emulator window.
+
+There are around 20 [popular terminal
+emulators](https://wiki.archlinux.org/title/Category:Terminal_emulators) for
+Linux and most of them are pretty similar in terms of functionality. However
+some of them have unique features such as [GPU
+acceleration](https://en.wikipedia.org/wiki/Hardware_acceleration) for better
+performance or the ability to click on URL links and open them in a browser.
+The one I chose is [Alacritty](https://github.com/alacritty/alacritty), it is
+written in [Rust](https://www.rust-lang.org/) (very modern and efficient
+programming language), has a convenient
+[YAML](https://en.wikipedia.org/wiki/YAML) configuration file and all of the
+aforementioned features. *Figure 19* shows two Alacritty windows opened: the
+first one only has the command prompt and no output of ran commands, and the second
+one shows the output of the last five commands (`epq`, `mv`, `cd`, `o` and
+`ls`).
+
+![Terminal Emulator](./attachments/terminal.png) 
+*<p align="center"> Figure 19 </p>*
 
 #### Shell
-*WIP*
+
+>A **Unix shell** is a command-line interpreter that provides a command line
+>user interface for Unix-like operating systems. The shell is both an
+>interactive command language and a scripting language, and is used by the
+>operating system to control the execution of the system using shell
+>scripts.[^shell]
+
+[^shell]: https://en.wikipedia.org/wiki/Unix_shell
+
+Some of the most popular shells are [Bash](https://www.gnu.org/software/bash/),
+[fish](https://fishshell.com/) and [Zsh](https://www.zsh.org/), however there
+are also [other
+shells](https://wiki.archlinux.org/title/Command-line_shell#List_of_shells)
+available. I picked the latter due to fish not being [POSIX
+compliant](https://www.cyberciti.biz/faq/what-is-posix-shell/#:~:text=POSIX%20is%20an%20acronym%20for,cross%2Dplatform%20software%20development%20easy.)
+and bash not having as much functionality, whereas Zsh has some additional
+features such as advanced command completion and many frameworks that provide
+customization. 
+
+In order to customize the look and feel of the shell and extend its
+functionality [I used different
+plugins](https://github.com/akim-13/zsh/tree/master/plugins), e.g. for syntax
+highlighting and a completion menu with [fuzzy
+search](https://en.wikipedia.org/wiki/Approximate_string_matching) support. I
+also use the [Starship prompt](https://starship.rs/) to get a three-line
+command prompt with additional information such as the name of the current user
+and machine, current directory, icons indicating the status of a git repository
+and others. A major change is the replacement of the standard `ls` command,
+which lists files, with `lsd` that provides a colorful output and shows the
+total size of files and directories. *Figure 20* shows the comparison between
+`ls` and `lsd` and a newly opened terminal window where an automatic [startup
+script](https://github.com/akim-13/zsh/blob/master/rc/01-startup.zsh) is run
+every time to output:
+
+1. System information (uses [Paleofetch](https://github.com/ss7m/paleofetch))
+2. Number of files in the `$HOME` directory in order for me to keep track of
+   how clean it is
+3. A random [colorscript](https://gitlab.com/dwt1/shell-color-scripts)
+4. Command prompt
+
+![Shell](./attachments/shell.png) 
+*<p align="center"> Figure 20 </p>*
+
+Another notable feature is the use of
+[Bpytop](https://github.com/aristocratos/bpytop) instead of the default `top`
+command that shows the current running processes. Although it is done mainly
+for aesthetic purposes, `bpytop` provides more information, like the graph of
+CPU usage or network speed, which can be very helpful. The comparison of two
+can be seen in *figure 21*.
+
+![Top VS Bpytop](./attachments/top.png) 
+*<p align="center"> Figure 21 </p>*
 
 #### Text Editor
-*WIP*
-
-
-### GUI Applications
 *WIP*
 
 
