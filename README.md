@@ -1084,8 +1084,86 @@ can be seen in *figure 21*.
 *<p align="center"> Figure 21 </p>*
 
 #### Text Editor
-*WIP*
 
+Text editor is one of the most important elements of the system because the
+vast majority of both CLI and GUI applications use configuration files that
+have to be edited manually. Moreover, I like coding, so having a good text
+editor accelerates the process and makes it more enjoyable.
+
+I did not consider any GUI text editors, as most of the work is done in the
+terminal, so a CLI solution works the best. There are a lot of CLI text
+editors, however the ones that people usually pick from are:
+
+1. [Nano](https://www.nano-editor.org/)
+2. [Emacs](https://www.gnu.org/software/emacs/)
+3. [Vim](https://www.vim.org/)
+
+Nano is very simplistic. It neither has a lot of functionality, nor
+customizability, however it gets the job done. If a new user has to edit a
+configuration file through a terminal, Nano is a good pick -- the controls are
+quite simple and every action a user might want is documented at the bottom
+along with shortcuts. It might be a great starting point when looking for a CLI
+text editor, however I do not think it is a worthy solution in the long run.
+*Figure 22* shows a text file opened in Nano.
+
+![Nano](https://www.howtogeek.com/wp-content/uploads/2011/02/banner1.png?height=200p&trim=2,2,2,2) 
+*<p align="center"> Figure 22 </p>*
+
+Emacs on the other hand is way more extensive in terms of functionality. As a
+matter of fact, it has so much functionality that some people joke about it
+almost being a separate OS. All the actions in Emacs are performed with key
+combinations, however due to the sheer number of them it may become complicated
+to press all of the keys at once. Furthermore, I was searching for a
+lightweight text editor with more minimalistic approach, therefore Emacs did
+not end up being my final choice. An example can be seen in *figure 23*.
+
+![Emacs](https://upload.wikimedia.org/wikipedia/commons/f/f2/Emacs27_showing_Org%2C_Magit%2C_and_Dired_with_the_modus-operandi_theme.png) 
+*<p align="center"> Figure 23 </p>*
+
+Vim however is much more light weight, and more closely follows the [UNIX
+philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) that "favors
+composability as opposed to monolithic design". The main idea behind this text
+editor is having different modes for different purposes. For instance, in
+`NORMAL` mode each key is a shortcut to some operation, so in order to perform
+complicated text manipulation there is no need to use long key sequences that
+require multiple keys pressed simultaneously. If the user presses `i` in the
+`NORMAL` mode, they switch to the `INSERT` mode and can start entering text.
+
+Although Vim is very lightweight it has unimaginable amount of functionality
+that can be extended even further through the use of plugins and custom
+scripts. Nevertheless, these scripts have to be written in
+[Vimscript](https://en.wikipedia.org/wiki/Vim_(text_editor)#Vim_script) — a
+custom scripting language built into the editor. Unfortunately, it is quite
+outdated and has complex and unintuitive syntax, so to simplify the
+configuration process I went with [Neovim](https://neovim.io/). It is a fork of
+vim that aims "to improve the codebase, allowing for easier implementation of
+APIs, improved user experience and plugin implementation." The configuration
+can be done in [lua](https://www.lua.org/) a much more modern and easier to
+learn language. 
+
+[My configuration](https://github.com/akim-13/neovim) is available in a
+separate GitHub repository. This editor deserves a separate EPQ in and of
+itself, however for the purposes of this project I highlighted and described
+some of the elements of an example working space in *figure 24*:
+
+1. A file tree that allows to navigate the current working directory and
+   perform manipulations with files, such as opening, deleting, moving,
+   renaming, etc.
+2. Tabs displaying opened windows
+3. First visible window or a "split" that displays the `dwm.c` file
+4. Second split displays the `util.c` file
+5. Third split displays the `patches.def.h` file
+6. Current mode is set to `INSERT` because I am entering text in the second
+   split
+7. Status bar with additional information such as the filename and current line
+   number
+8. Automatic completion menu that shows suggestions based on the text that is
+   being entered
+9. A snippet preview window that shows a short description of the currently
+   selected entry in the completion menu
+
+![Vim](./attachments/vim.png) 
+*<p align="center"> Figure 24 </p>*
 
 ### Backup System
 *WIP*
@@ -1095,7 +1173,6 @@ can be seen in *figure 21*.
 
 #### Full System Backup
 *WIP*
-
 
 ### Future Improvements
 *WIP*
