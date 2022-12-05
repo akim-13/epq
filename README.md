@@ -1166,13 +1166,94 @@ some of the elements of an example working space in *figure 24*:
 *<p align="center"> Figure 24 </p>*
 
 ### Backup System
-*WIP*
-
 #### Partial Backup
-*WIP*
+
+Partial backup implies creating a copy of essential data. It is absolutely
+crucial for safety reasons to backup at least user files in case something goes
+wrong. For instance, a backup would be very useful if an important file gets
+accidentally deleted and cannot be recovered, or, more generally, in case a
+user needs to access something that is not present on the current system but
+may be found in the backed-up data.
+
+There is a wide range backup software, and fortunately ArchWiki has
+[comprehensive comparison
+tables](https://wiki.archlinux.org/title/Synchronization_and_backup_programs)
+that can help to choose the right one. When choosing such software the
+following aspects should be considered:
+
+> - The **type of backup medium** that is going to store the data, e.g. CD,
+>   DVD, remote server, external hard drive, etc.
+> - The planned **frequency of backups**, e.g. daily, weekly, monthly, etc.
+> - The **features** expected from the backup solution, e.g. compression,
+>   encryption,
+handles renames, etc. 
+> - The planned **method to restore** backups if needed.[^backup]
+
+[^backup]: https://wiki.archlinux.org/title/Synchronization_and_backup_programs#Important_considerations
+
+I planned to perform weekly backups on a regular USB drive that can be accessed
+directly from the OS. Moreover, I would like to safely keep multiple snapshots,
+so the space should be used efficiently. The program which fits the description
+the closest is [Borg](https://www.borgbackup.org/). It uses a secure encryption
+standard
+([AES256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)),
+efficient compression methods (22 level of
+[zstd](https://en.wikipedia.org/wiki/Zstd) in my case) and
+[deduplication](https://en.wikipedia.org/wiki/Data_deduplication) that
+eliminates duplicate copies of repeating data, saving even more space as a
+result. *Figure 25* shows an alias set up for Zsh. When it is typed into the
+command prompt (*fig. 26*) and executed, the word `bup` is substituted with the
+value specified in double quotes in *figure 25*. `$MY_MNT/bups` shows the path
+to where the backup named `backup_name` will be saved, and `~` is a shortcut
+for a user's [home directory](https://www.linux.com/training-tutorials/linux-directory-structure-home-and-root-folders/) 
+(`/home/username`) that contains all the user files and documents.
+
+```
+alias bup="borg create --stats --progress --compression=zstd,22"
+```
+*<p align="center"> Figure 25 </p>*
+
+```
+$ bup $MY_MNT/bups::backup_name ~
+```
+*<p align="center"> Figure 26 </p>*
 
 #### Full System Backup
-*WIP*
+
+A full system backup is done in order to restore the state of the OS in case
+something goes extremely wrong. For example, if user's SSD/HDD is older than
+roughly 5 years there is a chance of disk failure that will result in data
+being corrupted and there is no guarantee that it would be possible to retrieve
+it afterwards. It is also probable that the user themselves could break the
+system to the point where, worst case scenario, it would be easier to
+re-install rather than trying to fix it. In cases like that full system backup
+would save a lot of time and effort for the user, as they would just need to
+deploy the backup and everything would be as if nothing happened.
+
+There are a lot of [solution for performing a full system
+backup](https://wiki.archlinux.org/title/System_backup), however I decided to
+go along with the most reliable and straightforward one — [disk
+cloning](https://wiki.archlinux.org/title/Disk_cloning). It allows to create a
+1-to-1 copy of the SSD that my systems is stored on, consequently saving the
+hassle of deploying the backup in case it is needed, just by swapping the two
+SSDs. The main disadvantage of this method is that the exact model of the
+computer's SSD has to be purchased, which can be expensive. However it makes
+the process of making a backup very trivial, e.g. by using the pre-installed
+core utilities, such as
+[`dd`](https://wiki.archlinux.org/title/Dd#Cloning_an_entire_hard_disk) in my
+case. *Figure 27* shows an example of a command that can be used to clone an
+entire drive named `/dev/sda` (**i**nput **f**ile) to a drive `/dev/sdb`
+(**o**utput **f**ile). The `bs=64K` argument sets the block size to 64
+Kilobytes, i.e. the size of chunks that will be used to read/write data, and in
+case a read error is encountered, `conv=noerror,sync` will instruct `dd` to
+continue operation, ignoring all read errors and filling up input blocks with
+zeroes in order for data offsets to stay in sync. 
+
+```
+# dd if=/dev/sda of=/dev/sdb bs=64K conv=noerror,sync status=progress
+```
+*<p align="center"> Figure 27 </p>*
+
 
 ### Future Improvements
 *WIP*
