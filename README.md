@@ -1,35 +1,35 @@
 # Linux: The OS You Control
 
 ## Table of Contents
-- [Abstract](#abstract)
-- [Remarks](#remarks)
-  * [Format](#format)
-  * [Activity Logging](#activity-logging)
-- [Why Linux?](#why-linux)
-  * [Operating Systems](#operating-systems)
-  * [Windows](#windows)
-  * [Mac OS](#mac-os)
-  * [Linux](#linux)
-- [Which Linux?](#which-linux)
-    * [Linux Distributions](#linux-distributions)
-    * [Everyday *VS* Specialised Use](#everyday-vs-specialised-use)
-    * [Beginner Friendly *VS* Advanced](#beginner-friendly-vs-advanced)
-    * [Desktop Environment *VS* Window Manager](#desktop-environment-vs-window-manager)
-    * [GUI *VS* CLI](#gui-vs-cli)
-    * [Stable *VS* Rolling Release](#stable-vs-rolling-release)
-- [My Linux](#my-linux)
-    * [Distribution](#distribution)
-    * [Core Setup](#core-setup)
-        + [Security](#security)
-        + [Graphical Environment](#graphical-environment)
-    * [Command Line](#command-line)
-        + [Terminal Emulator](#terminal-emulator)
-        + [Shell](#shell)
-        + [Text Editor](#text-editor)
-    * [Backup System](#backup-system)
-        + [Partial Backup](#partial-backup)
-        + [Full System Backup](#full-system-backup)
-    * [Future Improvements](#future-improvements)
+1. [Abstract](#abstract)
+2. [Remarks](#remarks)<br>
+    2.1 [Format](#format)<br>
+    2.2 [Activity Logging](#activity-logging)<br>
+3. [Why Linux?](#why-linux)<br>
+    3.1 [Operating Systems](#operating-systems)<br>
+    3.2 [Windows](#windows)<br>
+    3.3 [Mac OS](#mac-os)<br>
+    3.4 [Linux](#linux)<br>
+4. [Which Linux?](#which-linux)<br>
+    4.1 [Linux Distributions](#linux-distributions)<br>
+    4.2 [Everyday *VS* Specialised Use](#everyday-vs-specialised-use)<br>
+    4.3 [Beginner Friendly *VS* Advanced](#beginner-friendly-vs-advanced)<br>
+    4.4 [Desktop Environment *VS* Window Manager](#desktop-environment-vs-window-manager)<br>
+    4.5 [GUI *VS* CLI](#gui-vs-cli)<br>
+    4.6 [Stable *VS* Rolling Release](#stable-vs-rolling-release)<br>
+5. [My Linux](#my-linux)<br>
+    5.1 [Distribution](#distribution)<br>
+    5.2 [Core Setup](#core-setup)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.1 [Security](#security)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.2 [Graphical Environment](#graphical-environment)<br>
+    5.3 [Command Line](#command-line)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.1 [Terminal Emulator](#terminal-emulator)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.2 [Shell](#shell)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.3 [Text Editor](#text-editor)<br>
+    5.4 [Backup System](#backup-system)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.4.1 [Partial Backup](#partial-backup)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.4.2 [Full System Backup](#full-system-backup)<br>
+    5.5 [Future Improvements](#future-improvements)<br>
 
 ## Abstract
 *WIP*
@@ -1256,4 +1256,80 @@ zeroes in order for data offsets to stay in sync.
 
 
 ### Future Improvements
-*WIP*
+
+Although configuration for comfortable everyday use and purposes of this
+project is complete, it will continue to be maintained and improved in the
+future. There is no limit to how much each element of the system can be made
+better. Faster performance, more aesthetic design, broader functionality — all
+of this can and will be achieved over time. The purpose of this chapter is to
+outline the main areas of subsequent improvements.
+
+Firstly, I will begin to work on some of the missing functionality that is not
+essential for system's operation but is nice to have. A pop-up notification
+system is one of them. In order to set it up, a standalone notification server
+first has to be implemented. There are [many
+solutions](https://wiki.archlinux.org/title/Desktop_notifications#Standalone)
+available but one of the most popular is [Dunst](https://dunst-project.org/).
+After that the display messages can be automized and customized using the
+programming language of choice. *Figure 28* shows how a simple [Bash
+script](https://www.freecodecamp.org/news/shell-scripting-crash-course-how-to-write-bash-scripts-in-linux/#:~:text=What%20is%20a%20Bash%20Script%3F,it%20using%20the%20command%20line.)
+that send a 'Hello world!' notification may look like.
+
+```
+hello_world.sh
+---------------------------------------------------------------------------------------
+#!/bin/bash
+notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-information
+
+```
+*<p align="center"> Figure 28 </p>*
+
+Another missing feature is a sleep mode. When the lid is closed or the user is
+inactive there could be three different scenarios, the laptop is either
+suspended to:
+
+1. [RAM](https://en.wikipedia.org/wiki/Random-access_memory)
+2. Disk
+3. Both
+
+Each method has pros and cons. For example, when the machine's state is
+recorded to RAM it can then be resumed very quickly (withing seconds), however
+the battery may still be depleted. On the other hand, disk suspension has zero
+power consumption as the machine is completely powered off. The downside is
+that it is much slower because generally even the fastest SSD is slower than
+the slowest RAM. The hybrid method suspends the machine to RAM but does not
+power it off unless the battery is depleting. In that case, it is suspended and
+then resumed from disk. I believe this method is the most versatile, therefore
+I tried setting it up in the past. However, upon encountering some
+complications due to encrypted swap space (see [Security](#security) chapter)
+this feature was postponed to be implemented in the future.
+
+Secondly, the performance can always be better. The laptop I use has a
+[discrete
+GPU](https://www.intel.co.uk/content/www/uk/en/support/articles/000057824/graphics.html#:~:text=Discrete%20graphics%20is%20a%20GPU,a%20significant%20amount%20of%20heat.),
+which is currently not utilised in the most efficient manner. For instance,
+[hardware video
+acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration#Installation)
+can allow for the video card to decode/encode video, thus making it smoother,
+offloading the CPU and saving power. To increase the lifespan of the disk it is
+possible to reduce the number of reads/writes to it, for example, by
+[relocating files to a tmpfs file
+system](https://wiki.archlinux.org/title/Improving_performance#Relocate_files_to_tmpfs).
+Furthermore, both the CPU and GPU can be
+[overclocked](https://en.wikipedia.org/wiki/Overclocking), i.e. their
+computational performance can be improved by increasing the peak clock
+frequency. Although this practice must be used with caution, as exceeding the
+clock rate certified by the manufacturer may result in permanent hardware
+damage.
+
+Lastly, there are limitless possibilities to improve the overall look and
+design of the system. A case in point, there are [various
+patches](https://dwm.suckless.org/patches/) that can be applied to DWM to
+customise the appearance of the windows and status bar. A different fork of
+Picom (e.g. [by Jon Burga](https://github.com/jonaburg/picom)) can be installed
+in order to introduce features such as window transparency, shadows,
+animations, etc. The appearance of the terminal and everything within it
+(command prompt, text editor, other CLI applications) can be improved with
+corresponding plugins, and to make use of the currently empty desktop area, an
+application for monitoring system's performance, such as
+[Conky](https://github.com/brndnmtthws/conky), can also be installed.
