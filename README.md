@@ -32,7 +32,19 @@
     5.5 [Future Improvements](#future-improvements)<br>
 
 ## Abstract
-*WIP*
+
+This project investigates the customization potential of Linux as an operating
+system, contrasting it with proprietary platforms such as Windows and Mac OS.
+It focuses on exploring various Linux distributions, desktop
+environments, and window managers to assess their flexibility, security
+features, and efficiency in different use cases. Arch Linux was chosen as the
+primary subject due to its minimalistic design and extensive configuration
+capabilities, allowing for full control over system elements. Through hands-on
+implementation, including system encryption, backup strategies, and
+command-line environment optimization, the project demonstrates the feasibility
+and advantages of building a personalized OS. The findings suggest that Linux
+offers significant benefits in terms of customization and system control,
+making it a robust choice for advanced users. This work was awarded an **A**.
 
 ## Remarks
 ### Format
@@ -376,8 +388,7 @@ anybody to download for all kinds of purposes, therefore it is important to
 know at least a general categorisation in order to not get overwhelmed by
 choice and pick the right one.
 
-[![Linux Distributions
-Timeline](https://upload.wikimedia.org/wikipedia/commons/b/b5/Linux_Distribution_Timeline_21_10_2021.svg)](https://upload.wikimedia.org/wikipedia/commons/b/b5/Linux_Distribution_Timeline_21_10_2021.svg)
+![Linux Distributions Timeline](./attachments/Linux_Distribution_Timeline.svg)
 *<p align="center"> Figure 6 </p>*
 
 ### Everyday *VS* Specialised Use
